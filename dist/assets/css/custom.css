@@ -1,0 +1,12 @@
+.arrow {
+    background: transparent url(https://javierdelgado.com.ve/img/arrows.png) no-repeat 0 0;
+    width: 47px;
+    height: 120px;
+    display: inline-block;
+    position: relative;
+}
+.arrow.hlb {
+    background-position: -209px -101px;
+    width: 120px;
+    height: 47px;
+}

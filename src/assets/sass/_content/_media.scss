@@ -1,0 +1,89 @@
+/* Media
+----------------------------------------------------------*/
+
+/* Images */
+	
+.image-box {
+	position: relative;
+	.image {
+		overflow: hidden;
+	}
+	.hover {
+		display: none;
+	}
+}
+
+/* Images List */
+
+.images-list-wrapper {
+	position: relative;
+
+	.images-list {
+		position: relative;
+		z-index: 1;
+	}
+
+	.images-list-hover {
+		position: absolute;
+		@include scale(0);
+		@include opacity(0);
+		visibility: hidden;
+		@include border-radius(3px);
+		background: $color-primary;
+		color: $color-white;
+		@include transition(all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1));
+		z-index: 2;
+
+		.content {
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			right: 20px;
+			@include translate3d(0,-50%,0);
+			text-align: center;
+
+		    > a:not(.btn) {
+		    	display: block;
+
+		    	& + .btn {
+		    		margin-top: 15px;
+		    	}
+		    }
+		}
+	}
+
+	&:hover {
+		.images-list-hover {
+			@include scale(1);
+			@include opacity(1);
+		    visibility: visible;		
+		}
+	}
+}
+
+/* Video Box */
+	
+.video-box {
+	position: relative;
+	overflow: hidden;
+
+	&.placeholder-image {
+		.btn-play {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include translate3d(-50%,-50%,0);
+		}
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+
+		&.playing {
+			.btn-play {
+				@include opacity(0);
+				visibility: hidden;
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+ {
+ 	"socials": [
+                  { "url" : "https://twitter.com/cheche338", "name": "Twitter", "class": "icon-twitter", "fa":"fa fa-twitter"  },
+                  { "url" : "https://www.facebook.com/04248309075j", "name": "Facebook", "class": "icon-facebook", "fa":"fa fa-facebook"  },
+                  { "url" : "https://www.instagram.com/javierdelgado1/", "name": "Instagram", "class": "icon-instagram",  "fa":"fa fa-instagram" },
+                  { "url" : "skype:cheche338?call", "name": "Skype", "class": "icon-skype", "fa":"fa fa-skype"  },
+                  { "url" : "https://ve.linkedin.com/in/javierdelgado1", "name": "LinkedIn", "class": "icon-linkedin", "fa":"fa fa-linkedin"  }
+
+               ]
+}

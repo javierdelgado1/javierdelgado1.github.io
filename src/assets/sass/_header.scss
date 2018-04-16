@@ -1,0 +1,31 @@
+/* ---------------------------------------------------------------------------- */
+/* --- 3. HEADER
+/* ----------------------------------------------------------------------------- */
+
+#header {
+	position: absolute;
+	font-family: $font-secondary;
+	color: $color-white;
+	width: 100%;
+	z-index: 888;
+	@include box-shadow(0px 2px 10px 0px rgba($color-black,0.1));
+	@include transition(transform 1s ease-out);
+	@include translateY(-100%);
+
+	&.transparent {
+		@include opacity(0.88);
+	}
+}
+
+body.loaded #header {
+	@include translateY(0);
+}
+
+body.sticky-layout #header {
+	position: fixed;
+	top: -$topBarHeight;
+}
+
+@import "_header/navigation-bar";
+@import "_header/top-bar";
+

@@ -1,0 +1,224 @@
+{
+  "about" : {
+    "description_en" : "english",
+    "description_es" : "<p>Hola soy Javier Delgado  <strong>Ingeniero en Computación</strong>, me apasiona todo lo que está relacionado con la tecnológia, ciencias computacionales, desarrollo de aplicaciones de entorno web,  sistemas,  páginas web, bases de datos, seguridad informática, posicionamiento en buscadores, tecnológia,  internet,  robótica y electrónica. \t\t\t\t\t\t\t</p> \t\t\t\t\t\t\t<p> \t\t\t\t\t\t\tSiempre he sentido el gran  interés por la tecnológia y en especial por las computadoras y las relacionadas a estas, esto me dio el deseo de querer saber de cómo funcionan  las tecnologías  y de saber cómo se pueden desarrollar, sabiendo que esto es el futuro, por lo que decidí  estudiar Ing.  En Computación de la cual soy egresado de la Universidad de Oriente Nucleo Anzoategui, Barcelona Edo. Anzoátegui Venezuela.  \t\t\t\t\t\t\t</p> \t\t\t\t\t\t\t<p> \t\t\t\t\t\t\tGracias a mis estudios y experiencias laborales tengo una  gran amplia variedad de conocimientos en el área de programación y de robótica (todo descrito en detalle <a href=\"#mishabilidades\">más abajo</a>) \t\t\t\t\t\t\tActualmente hablo español, mi lengua nativa, lenguaje gestual (lenguaje de señas) además manejo ingles intermedio con total habilidad para leer  y escribir (actualmente estoy en proceso de aprendizaje).  \t\t\t\t\t\t\t</p> \t\t\t\t\t\t\t<p> \t\t\t\t\t\t\tTengo experiencia laboral en desarrollo de aplicaciones web, desktop  (java) así como también en la creación y  mantenimiento  de sitios web.</p>"
+  },
+  "contact" : {
+    "address" : "Puerto la Cruz, Venezuela",
+    "email" : "ingeniero@javierdelgado.com.ve",
+    "phone" : "(+58)42408309075"
+  },
+  "experience" : {
+    "id0" : {
+      "date" : "08.2010 - 09.2011",
+      "hasImagePreview" : false,
+      "place" : "Envato, Sydney, Australia",
+      "title" : "Front-End Developer"
+    },
+    "id1" : {
+      "date" : "08.2010 - 09.2011",
+      "hasImagePreview" : true,
+      "place" : "Envato, Sydney, Australia",
+      "title" : "Webdesigner & Front End Developer",
+      "urlImage" : "https://www.javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/london.jpg"
+    }
+  },
+  "home" : {
+    "address" : "Puerto la Cruz, Venezuela",
+    "address_es" : "Puerto la Cruz, Venezuela",
+    "bornyear" : 1990,
+    "email" : "ingeniero@javierdelgado.com.ve",
+    "experience" : 5,
+    "icon" : "ti-clipboard",
+    "label_en" : "Chequea mis <strong>trabajos</strong>",
+    "label_es" : "Check my <strong>works</strong> ",
+    "phone" : "(+58)42408309075",
+    "subtitle_en" : "Proffesional web developer full stack",
+    "subtitle_es" : "Ing. en Computacion, profesional en el desarrollo web",
+    "url" : "#works"
+  },
+  "menu" : {
+    "about" : true,
+    "contact" : true,
+    "experience" : true,
+    "home" : true,
+    "lastestPost" : true,
+    "pricing" : true,
+    "promoVideo" : true,
+    "references" : true,
+    "services" : true,
+    "skills" : true,
+    "works" : true
+  },
+  "services" : {
+    "id0" : {
+      "class" : "ti-desktop",
+      "description_en" : "Proffesional &amp; effective coding serivices",
+      "description_es" : "Profesionales y servicios de codificación efectivos",
+      "title" : "Web Design"
+    },
+    "id1" : {
+      "class" : "ti-layers-alt",
+      "description_en" : "Development of web applications 'client side'",
+      "description_es" : "Desarrollo de aplicaciones  web 'lado del cliente'",
+      "title" : "Front-End Development"
+    },
+    "id2" : {
+      "class" : "ti-server",
+      "description_en" : "Development of web applications 'server side'",
+      "description_es" : "Desarrollo de aplicaciones  web 'lado del servidor'",
+      "title" : "Bakend-End Development"
+    },
+    "id3" : {
+      "class" : "ti-location-arrow",
+      "description_en" : "Develop programs that operate as an agent for a user or another program or simulate a human activity",
+      "description_es" : "Desarrollo programas que operen como un agente para un usuario u otro programa o simular una actividad humana",
+      "title" : "Bots Development"
+    }
+  },
+  "skills" : {
+    "angular" : {
+      "name" : "AngularJs",
+      "value" : 85
+    },
+    "boostrap" : {
+      "name" : "Boostrap",
+      "value" : 90
+    },
+    "css" : {
+      "name" : "Css3",
+      "value" : 70
+    },
+    "grunt" : {
+      "name" : "Grunt",
+      "value" : 60
+    },
+    "gulp" : {
+      "name" : "Gulp",
+      "value" : 60
+    },
+    "html" : {
+      "name" : "Html5",
+      "value" : 95
+    },
+    "java" : {
+      "name" : "Java",
+      "value" : 60
+    },
+    "javascript" : {
+      "name" : "Javascript",
+      "value" : 70
+    },
+    "jquery" : {
+      "name" : "Jquery",
+      "value" : 70
+    },
+    "laravel" : {
+      "name" : "Laravel",
+      "value" : 80
+    },
+    "mysql" : {
+      "name" : "Mysql",
+      "value" : 90
+    },
+    "php" : {
+      "name" : "Php",
+      "value" : 70
+    },
+    "postgresql" : {
+      "name" : "PostgreSql",
+      "value" : 60
+    },
+    "react" : {
+      "name" : "react",
+      "value" : 50
+    },
+    "vuejs" : {
+      "name" : "VueJs",
+      "value" : 70
+    }
+  },
+  "socials" : [ {
+    "class" : "icon-twitter",
+    "fa" : "fa fa-twitter",
+    "isVisible" : false,
+    "name" : "Twitter",
+    "url" : "https://twitter.com/cheche338"
+  }, {
+    "class" : "icon-facebook",
+    "fa" : "fa fa-facebook",
+    "isVisible" : false,
+    "name" : "Facebook",
+    "url" : "https://www.facebook.com/04248309075j"
+  }, {
+    "class" : "icon-instagram",
+    "fa" : "fa fa-instagram",
+    "isVisible" : true,
+    "name" : "Instagram",
+    "url" : "https://www.instagram.com/javierdelgado1/"
+  }, {
+    "class" : "icon-skype",
+    "fa" : "fa fa-skype",
+    "isVisible" : true,
+    "name" : "Skype",
+    "url" : "skype:cheche338?call"
+  }, {
+    "class" : "icon-linkedin",
+    "fa" : "fa fa-linkedin",
+    "isVisible" : true,
+    "name" : "LinkedIn",
+    "url" : "https://ve.linkedin.com/in/javierdelgado1"
+  } ],
+  "works" : {
+    "globalsys" : {
+      "category" : "development",
+      "cover_url" : "https://javierdelgado.com.ve/img/projects/globalsys/img1.png",
+      "description_en" : "Self-administered registration system, This system uses responsive technology ie self-resizable for any screen resolution,100% compatible with telephone devices, Tablets, Laptops, Desktop Computers, Smart TV.  Globalsys, is a 95% dynamic system, so everything is recharged dynamically, has news sections,contact, content download area, registration forms, company details, programmable calendars, payment form, payment verification",
+      "description_es" : "Sistema de inscripcion autoadministrable, Es te sistema usa tecnologica responsivo es decir autoredimensionable para cualquier resolucion de pantalla, 100% compatibles con dispostivos telefonicos, Tablets, Laptops, Computadoras de Escritorio, Smart Tv.   Globalsys, es un sistema 95% dinamico, por lo que todo se recarga dinamicamente, cuenta con secciones de noticias, contacto, zona de descarga de contenido, formularios de inscripcion, detalles de la empresa, calendarios programables, formulario de pago, comprobacion de pagos",
+      "details_en" : {
+        "1" : "Allows the creation of a course and associates it with a specific area",
+        "2" : "Registration form, with validations in the fields",
+        "3" : "Facilitators form, with validations in the fields",
+        "4" : "Creation and edition of news for blog",
+        "5" : "Validation of payments",
+        "6" : "Self-administered contact area",
+        "detail1" : "Allows the creation of areas"
+      },
+      "details_es" : {
+        "1" : "Permite La creación de áreas",
+        "2" : "Permite la creación de curso y asociarlo a un área determinada",
+        "3" : "Formulario de inscripción, con validaciones en los campos",
+        "4" : "Formulario de facilitadores, con validaciones en los campos",
+        "5" : "Creación y edición de noticias para blog",
+        "6" : "Validación de pagos",
+        "7" : "Zona de contacto autoadministrable",
+        "detail1" : "Permite La creación de áreas"
+      },
+      "existLiveDemo" : false,
+      "hasDetail" : true,
+      "name" : "Globalsys",
+      "screenshots" : {
+        "photo" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg1.png?alt=media&token=2ba149d7-823e-45f2-a994-6e48ad43295d",
+        "photo10" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg10.png?alt=media&token=91d295e6-a009-44cc-8726-6967a1c1bd1a",
+        "photo11" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg11.jpg?alt=media&token=df298a70-df15-4c85-a999-3d6deac098a7",
+        "photo12" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg12.jpg?alt=media&token=47ee3383-9565-4be0-b4d8-dddeb3f3d0ed",
+        "photo2" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg2.png?alt=media&token=43f5a5e2-b653-4b21-ae67-c6d402508eb5",
+        "photo3" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg3.png?alt=media&token=a0a81a83-29d7-4158-9d07-ba702dd86191",
+        "photo4" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg4.png?alt=media&token=6d1d53a8-8339-4e9d-b36c-8b00659034fa",
+        "photo5" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg5.png?alt=media&token=e6fb3a65-a1e4-49db-adf7-8579541fe4b8",
+        "photo6" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg6.png?alt=media&token=38061188-bac6-4f60-a8ac-8225052ae66c",
+        "photo7" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg7.jpg?alt=media&token=2a8a165b-26ad-4151-b2cb-69cadb4343cf",
+        "photo8" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg8.png?alt=media&token=458d1187-9fae-4fd2-8b4a-26597c1463bb",
+        "photo9" : "https://firebasestorage.googleapis.com/v0/b/portafolio-5fd2c.appspot.com/o/globalsys%2Fimg9.jpg?alt=media&token=e10c21c0-e04f-4fe6-95f8-6f907842478b"
+      },
+      "tecnologies" : {
+        "html" : "Html5",
+        "javascript" : "Javascript",
+        "jquery" : "Jquery",
+        "mysql" : "Mysql",
+        "php" : "Php"
+      },
+      "urlProject" : "https://javierdelgado.com.ve/portafolio/globalsys/"
+    }
+  }
+}

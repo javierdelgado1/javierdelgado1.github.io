@@ -1,0 +1,31 @@
+/* Progress Bars
+----------------------------------------------------------*/
+
+.progress {
+	@include box-shadow(none);
+	@include border-radius(30px);
+	height: 34px;
+	background-color: $color-grey-2;
+	margin-bottom: 18px;
+
+	.progress-bar {
+		line-height: 34px;
+		@include border-radius(30px);
+		text-align: right;
+		padding-right: 15px;
+		background-color: $color-primary;
+		font-family: $font-secondary;
+		@include box-shadow(none);
+
+		$k: 1;
+		@for $i from 1 through length($colorVersions)/2 {
+			$type: nth($colorVersions,$k);
+			$color: nth($colorVersions,$k+1);
+
+			&.progress-bar-#{$type} {
+				background-color: $color;
+			}
+			$k: $k+2;
+		}
+	}
+}

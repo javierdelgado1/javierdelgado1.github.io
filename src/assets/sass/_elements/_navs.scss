@@ -1,0 +1,219 @@
+/* Navs
+----------------------------------------------------------*/
+
+/* Inline */
+
+.nav-inline {
+	li {
+		display: inline-block;
+
+		a {
+			font-family: $font-secondary;
+			text-transform: uppercase;
+			padding: 0 9px;
+			@include opacity(0.5);
+			background: none;
+
+			&:hover, &:focus {
+				@include opacity(1);
+				background: none;
+			}
+		}
+	}
+
+	&.nav-sm a { font-size: 11px; }
+}
+
+/* Pills */
+
+.nav-pills {
+	> li {
+		display: inline-block;
+		float: none;
+
+		> a {
+			font-family: $font-secondary;
+			text-transform: uppercase;
+			font-size: 11px;
+			font-weight: 600;
+			@include border-radius(30px);
+			padding: 11px 26px;
+		}
+
+		&.active {
+			> a {
+				background-color: $color-primary;
+
+				&:hover, &:focus {
+					background-color: $color-primary;
+				}
+			}
+		}
+
+		& + li {
+			margin-left: 0;
+		}
+	}
+}
+
+/* Tabs */
+
+.tabs-wrapper {
+	position: relative;
+
+	.nav-tabs {
+		border: none;
+		> li {
+			display: inline-block;
+			float: none;
+
+			> a {
+				position: relative;
+				font-family: $font-secondary;
+				text-transform: uppercase;
+				font-size: 11px;
+				font-weight: 500;
+				padding: 15px 12px;
+				@include opacity(0.5);
+				border: none !important;
+				background: transparent !important;
+				margin-right: 0;
+
+				@media #{$screen-xxs} {
+					padding: 15px 6px;
+				}
+
+				&:hover, &:focus {
+					@include opacity(1);
+					border: none !important;
+					background: transparent !important;
+				}
+			}
+			&.active > a {
+				@include opacity(1);
+			}
+		}
+	}
+
+	&:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: rgba($color-black, 0.15);
+		content: ' ';
+		height: 4px;
+		@include border-radius(2px);
+	}
+
+	.selector {
+		position: absolute;
+		bottom: 0;
+		height: 4px;
+		@include border-radius(2px);
+		background: $color-primary;
+		@include transition(all .3s ease-out);
+	}
+}
+
+/* Vertical Navigation */
+
+.nav-vertical > li:not(:last-child) { 
+	border-bottom: 1px solid rgba(0,0,0,0.1); 
+}
+.dark .nav-vertical > li { 
+	border-color: rgba(255,255,255,0.1); 
+}
+
+.nav-vertical > li {
+
+	> a {
+		position: relative; 
+		display: inline-block; 
+		font-size: 13px; 
+		font-weight: 500; 
+		padding: 8px 0; 
+
+		&:before {
+			position: absolute;
+			top: 4px;
+			left: -15px;
+			bottom: 4px;
+			right: -15px;
+			border-radius: 20px;
+			content: ' ';
+			@include scale(0);
+			@include transition(all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+			visibility: hidden;
+			@include opacity(0);
+			background: $color-primary;
+		}
+
+		&:hover, &:focus {
+			background: transparent;
+		}
+
+		> span { 
+			position: relative; 
+			z-index: 1; 
+		}
+
+		&.active {
+			color: $color-white;
+
+			&:before {
+				@include scale(1);
+				visibility: visible;
+				@include opacity(1);
+			}
+		}
+	} 
+
+	&.active {
+		> a {
+			color: $color-white;
+
+			&:before {
+				@include scale(1);
+				visibility: visible;
+				@include opacity(1);
+			}
+		}
+		> ul {
+			display: block; 
+		}
+	}
+
+	> ul {
+		padding: 10px 0px 20px;
+		list-style: none;
+		display: none;
+
+		> li {
+			> a {
+				line-height: 1.8;
+				@include opacity(0.5);
+
+				&:hover, &:focus {
+					@include opacity(1);
+				}
+			}
+			&.active {
+				> a {
+					@include opacity(1);
+				}
+			}
+		}
+	}
+}
+
+/* Sticky Nav */
+
+.side-sticky-navigation.affix { 
+	top: 110px; 
+	width: 100%; 
+	max-width: 300px; 
+}
+
+
+

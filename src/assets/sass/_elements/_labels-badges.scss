@@ -1,0 +1,26 @@
+/* Badges
+----------------------------------------------------------*/
+
+.badge {
+	font-size: 11px;
+	padding: 3px 5.5px;
+	font-family: $font-secondary;
+	font-weight: normal;
+
+	&.badge-primary {
+		background-color: $color-primary;
+	}
+}
+
+.label {
+    $k: 1;
+    @for $i from 1 through length($colorVersions)/2 {
+        $type: nth($colorVersions,$k);
+        $color: nth($colorVersions,$k+1);
+
+        &.label-#{$type} {
+            background-color: $color;
+        }
+        $k: $k+2;
+    }
+}

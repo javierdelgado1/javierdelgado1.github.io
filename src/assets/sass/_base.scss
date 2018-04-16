@@ -1,0 +1,37 @@
+@charset 'UTF-8';
+/* -----------------------------------------------------------------------------
+
+I'm Mat - Material Personal Resume vCard Template
+
+File:			Base SCSS File
+Version:        1.1
+Last change:    20/05/16 
+Author:			Suelo 
+
+Table of Contents:
+
+	1. Document Setup
+	2. Basic
+	3. Header 
+	4. Content 
+	5. Elements
+    5. Widgets
+	6. Animations
+
+-------------------------------------------------------------------------------- */
+
+// Import CSS3 Mixins 
+@import "compass/css3";
+
+// Import Config 
+@import "config";
+
+// Import Styles
+@import "setup";
+@import "basics";
+@import "header";
+@import "content";
+@import "elements";
+@import "widgets";
+@import "animations";
+

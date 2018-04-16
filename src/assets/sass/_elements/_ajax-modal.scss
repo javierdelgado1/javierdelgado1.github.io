@@ -1,0 +1,112 @@
+/* Ajax Modal
+----------------------------------------------------------*/
+
+#ajax-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 922;
+	display: none;
+	overflow: hidden;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0; 
+		height: 100vh;
+		width: 100vw;
+		@include scaleY(0);
+		@include transform-origin(50%, 100%);
+		background-color: $color-white;
+		content: ' ';
+		@include transition(all 0.6s ease-out);
+	}
+
+	&.loading-started {
+		&:before {
+			@include scaleY(1);
+		}
+	}
+
+	.ajax-modal-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: -30px;
+		bottom: 0;
+		height: 100vh;
+		margin-right: 30px;
+		overflow: auto;
+		display: none;
+	}
+
+	.ajax-title-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		font-size: 11px;
+		font-weight: 600;
+		background: $color-primary;
+		font-family: $font-secondary;
+		text-transform: uppercase;
+		padding: 15px 0;
+		color: $color-white;
+		z-index: 923;
+		@include translateY(-200%);
+		@include transition(all 1s ease-out);
+
+		.ajax-close {
+			position: absolute;
+			bottom: -42px;
+			right: 0;
+			@include box-shadow(0px 0px 15px 0 rgba($color-black, 0.1));
+		}
+	}
+
+	.ajax-content {
+		padding-top: 120px;
+		@include opacity(0);
+		@include transition(all 0.6s ease-out);
+
+		.container {
+			position: relative;
+		}
+	}
+
+	&.loading-finished {
+		.ajax-title-bar {
+			@include translateY(0);
+		}
+		.ajax-content {
+			@include opacity(1);
+		}
+	}
+}
+
+#ajax-loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -32px;
+	margin-top: -32px;
+	display: none;
+	z-index: 922;
+}
+
+#ajax-tmp {
+	display: none !important;
+	visibility: hidden;
+}
+
+html.locked-scrolling,
+html.locked-scrolling body {
+  height: 100%;
+  overflow: hidden;
+}

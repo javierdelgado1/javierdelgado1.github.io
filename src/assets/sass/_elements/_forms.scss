@@ -1,0 +1,97 @@
+/* Forms
+----------------------------------------------------------*/
+
+.input-wrapper {
+	position: relative;
+	margin-top: 10px;
+
+	.input-label {
+		position: absolute;
+		top: 8px;
+		left: 0;
+		@include opacity(0.5);
+		@include transition(all 0.3s ease-out);
+		z-index: 0;
+	}
+
+	.input-lg + .input-label {
+		top: 3px;
+		font-size: 16px;
+	}
+
+	.form-control {
+		position: relative;
+		z-index: 1;
+	}
+
+	.form-control:focus + .input-label,
+	.form-control.has-value + .input-label {
+		@include translateY(-23px);
+		font-size: 12px;
+	}
+
+	textarea {
+		resize: none;
+		border: none;
+
+		&:focus, &:active {
+			border: none;
+		}
+	}
+	
+	.input-line {
+		position: absolute;
+		left: 0;
+		top: 32px;
+		width: 100%;
+		height: 2px;
+		background-color: $color-grey-3;
+		content: ' ';
+		@include transition(all 0.3s ease-out);
+	}
+
+	.form-control:focus + .input-label + .input-line,
+	.form-control.has-value + .input-label + .input-line {
+		top: 100%;
+	}
+}
+
+.form-group {
+	margin-bottom: 25px;
+}
+
+.form-control {
+	@include border-radius(0);
+	@include box-shadow(none);
+	background-color: transparent;
+	font-size: 14px;
+	padding: 4px 0px;
+	height: 32px;
+	border: none;
+	color: inherit;
+	border-bottom: 2px solid $color-grey-3;
+	margin-bottom: 3px;
+	@include appearance(none);
+
+	&:focus, &:active {
+		@include box-shadow(none);
+		border-bottom: 2px solid $color-primary;
+	}
+
+	&.input-lg {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	&.valid { border-color: $color-green; }
+	&.error { border-color: $color-red; }
+
+}
+
+.dark .form-control {
+	border-color: $color-white;
+
+	&:focus, &:active {
+		border-color: $color-white;
+	}
+}

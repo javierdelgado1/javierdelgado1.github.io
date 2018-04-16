@@ -1,0 +1,126 @@
+/* Timeline
+----------------------------------------------------------*/
+
+.timeline {
+	position: relative;
+	padding: 60px 0;
+	
+	&:after {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		left: 35%;
+		width: 8px;
+		@include border-radius(4px);
+		content:  ' ';
+		background-color: $color-grey-2;
+		z-index: 0;
+
+		@media #{$screen-xs} {
+			left: 20%;
+		}
+
+	}
+
+	.timeline-event {
+		position: relative;
+		z-index: 2;
+		margin-bottom: 50px;
+
+		.date {
+			position: relative;
+			text-align: right;
+			float: left;
+			width: 35%;
+			padding-right: 30px;
+			color: $color-text-muted-dark;
+			font-size: 18px;
+			font-weight: 300;
+			margin-top: 7px;
+
+			@media #{$screen-xs} {
+				font-size: 13px;
+				width: 20%;
+			}
+
+			&:before {
+				position: absolute;
+				top: 1px;
+				right: -17px;
+				width: 26px;
+				height: 26px;
+				background-color: $color-primary;
+				border: 4px solid $color-white;
+				@include border-radius(50%);
+				content: ' ';
+			}
+		}
+		.content {
+			position: relative;
+			margin-left: 35%;
+			padding-left: 40px;
+
+			@media #{$screen-xs} {
+				margin-left: 20%;
+			}
+
+			> img {
+				margin-bottom: 15px;
+			}
+
+			h3 {
+				margin-bottom: 0;
+			}
+			.caption {
+				color: $color-text-muted-dark;
+				font-size: 15px;
+				font-weight: 300;
+			}
+
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.animated {
+			visibility: visible !important;
+
+			.date {
+				&:before {
+					@include scale(0);
+					@include transition(all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s);
+				}
+				> span {
+					display: inline-block;
+					@include transition(all 0.5s ease-out 0.3s);
+					@include translateX(-40px);
+					@include opacity(0);
+				}
+			}
+			.content {
+				@include translateX(40px);
+				@include transition(all 0.5s ease-out 0.3s);
+				@include opacity(0);
+			}
+
+			&.visible {
+				.date {
+					&:before {
+						@include scale(1);
+					}
+					> span {
+						@include translateX(0);
+						@include opacity(1);
+					}
+				}
+				.content {
+					@include translateX(0);
+					@include opacity(1);
+				}
+			}
+		}
+	}
+
+
+}

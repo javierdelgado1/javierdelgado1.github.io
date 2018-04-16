@@ -1,0 +1,39 @@
+/* Top Bar
+----------------------------------------------------------*/
+
+#top-bar {
+	font-size: 11px;
+	font-weight: 600;
+	background: rgba($color-black,0.1);
+	text-transform: uppercase;
+
+	.module {
+			
+		a, span {
+			line-height: $topBarHeight;
+		}
+		
+		&.right { float: right; }
+		&.left { float: left; }
+
+		&.menu {
+			> span {
+				margin-right: 10px;
+				@include opacity(0.5);
+			}
+			> a {
+				margin-right: 8px;
+				@include opacity(0.5);
+
+				&:hover, &:focus {
+					@include opacity(1);
+				}
+
+				&.active {
+					@include opacity(1);
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}

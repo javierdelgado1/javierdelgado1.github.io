@@ -32,7 +32,7 @@
     <div id="share-it">
       <a href="#" class="icon icon-circle icon-share"><i class="fa fa-share-alt"></i></a>
       <ul class="share-list">
-        <li v-for="(social, index) in socials" v-if="social.isVisible">
+        <li v-for="(social, index) in socials" v-if="social.isVisible" :key="index">
           <a :href="social.url"  target="_blank" class="icon icon-circle" :class="social.class">
             <i :class="social.fa"></i>
           </a>

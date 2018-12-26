@@ -41,7 +41,7 @@
 							<dd><a href="#">{{home.email}}</a></dd>
 							<dt v-lang.home.followme></dt>
 							<dd >	
-						          <a  v-for="(social, index) in socials" v-if="social.isVisible" :href="social.url"  target="_blank" class="icon icon-circle icon-sm" :class="social.class">
+						          <a  v-for="(social, index) in socials" :key="index" v-if="social.isVisible" :href="social.url"  target="_blank" class="icon icon-circle icon-sm" :class="social.class">
 						            <i :class="social.fa"></i>
 						          </a>
 							</dd>

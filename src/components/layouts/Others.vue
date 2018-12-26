@@ -43,7 +43,7 @@
 			<!-- Contact -->
 			<div class="latest-posts widget">
 				<h6 v-lang.others.title_form></h6>
-				<form @submit.prevent="onContact" class="contact-form validate-form">
+				<form @submit.prevent="onContact" id="contactForm2" class="contact-form validate-form">
 					<div class="form-group input-wrapper">
 						<input type="text" class="form-control" v-model="name"  required>
 						<span class="input-label" v-lang.others.input_name></span>
@@ -53,7 +53,7 @@
 						<span class="input-label" v-lang.others.input_email></span>
 					</div>
 					<div class="form-group input-wrapper">
-						<textarea name="message" cols="30" rows="4" v-model="text" class="form-control"></textarea >
+						<textarea name="messageArea" cols="30" rows="4" v-model="text" class="form-control"></textarea >
 						<span class="input-label" v-lang.others.input_message></span>
 						<span class="input-line"></span>
 					</div>
@@ -121,14 +121,14 @@
 			                        name:{
 			                        	require: true
 			                        },
-			                        message: {
+			                        messageArea: {
 			                        	required: true
 			                        }
 
 			                    }
 			                });
 			            }); 
-			            var $form=$('#contactForm')
+			            var $form=$('#contactForm2')
 		              	if ($form.valid()){
 							this.buttonClass= this.buttonClass + ' loading'	
 							let formData =new FormData();
@@ -139,6 +139,7 @@
 								method: 'post',
 								body: formData
 							}).then(function(response) {
+								debugger;
 								if(response.status==200||response.status =="200"){
 								    	this.buttonClass='btn btn-submit  success loading'
 								    	this.name=""

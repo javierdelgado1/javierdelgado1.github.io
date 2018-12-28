@@ -4,7 +4,7 @@
 		<div class="section-content">
 			<h3 class="text-muted" v-lang.menu.service></h3>
 			<div class="row">
-				<div class="col-sm-6" v-for="(service, index) in services">
+				<div class="col-sm-6" v-for="(service, index) in services" :key="index">
 					<!--<div   class="icon-box icon-box-1 text-center animated" data-animation="zoomIn">-->
 					<div   class="icon-box icon-box-1 text-center">
 						<span class="icon icon-muted icon-xl"><i :class="service.class"></i></span>

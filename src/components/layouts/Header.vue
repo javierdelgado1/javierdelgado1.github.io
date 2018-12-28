@@ -95,7 +95,7 @@
 	        query_menu.on("value", function(snapshot) {
 	            datos = snapshot.val()
 	            this.menu=datos
-	            //console.log(this.menu)
+	            console.log(this.menu)
 	        }.bind(this), function (errorObject) {
 	          console.log("The read failed: " + errorObject.code);
 	        });

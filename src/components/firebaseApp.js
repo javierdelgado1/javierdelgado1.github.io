@@ -20,6 +20,8 @@ export const query_services = firebaseApp.database().ref().child('services')
 export const query_experience = firebaseApp.database().ref().child('experience')
 export const query_menu = firebaseApp.database().ref().child('menu')
 export const query_socials = firebaseApp.database().ref().child('socials')
+export const imagesCertificates = firebaseApp.database().ref().child('imagesCertificates')
+
 
 
 

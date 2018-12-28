@@ -670,7 +670,7 @@
       <!-- Contact -->
       <div class="latest-posts widget">
         <h6>Contact me</h6>
-        <form id="contact-form-2" class="contact-form validate-form">
+        <form @submit.prevent="onContact" id="contact-form-2" class="contact-form validate-form">
           <div class="form-group input-wrapper">
             <input type="text" class="form-control" required>
             <span class="input-label">Name</span>

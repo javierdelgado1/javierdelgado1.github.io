@@ -37,11 +37,17 @@
 					<li v-if="menu.experience"  >
 						<a href="#" v-scroll-to="'#experience'"  v-lang.menu.experience></a>
 					</li>
+					<li v-if="menu.service"  >
+						<a href="#" v-scroll-to="'#experience'"  v-lang.menu.service></a>
+					</li>
 					<li v-if="menu.references">
 						<a href="#" v-scroll-to="'#references'"  v-lang.menu.references></a>
 					</li>
 					<li v-if="menu.lastestPost" >
 						<a href="#"  v-scroll-to="'#latest-posts'" v-lang.menu.lastestPost></a>
+					</li>
+					<li v-if="menu.certificates" >
+						<a href="#" v-scroll-to="'#certificates'"  v-lang.menu.certificates></a>
 					</li>
 					<li v-if="menu.contact" >
 						<a href="#" v-scroll-to="'#contact'"  v-lang.menu.contact></a>

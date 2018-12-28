@@ -23,6 +23,7 @@
         <Experience v-if="menu.experience"/>
         <Reference v-if="menu.reference" />
         <LastestPost v-if="menu.lastestPost" />
+        <Certificates v-if="menu.certificates" />
         <Contact  />
       </div>
 
@@ -72,6 +73,7 @@ import Contact from './sections/Contact.vue'
 import Others from './layouts/Others.vue'
 import Project from './sections/Project.vue'
 import {firebaseApp, query_menu, query_socials} from './firebaseApp'
+import Certificates from './sections/Certificates.vue'
 
 
 
@@ -107,7 +109,8 @@ export default {
     LastestPost,
     Contact,
     Others,
-    Project
+    Project,
+    Certificates
 
   },
   methods:{

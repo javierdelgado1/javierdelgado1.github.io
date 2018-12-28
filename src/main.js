@@ -45,7 +45,8 @@ Vue.use(MultiLanguage, {
 			languajeVersion: 'LANGUAGE VERSION',
 			english: 'English',
 			spanish: 'Spanish',
-			service: 'My services'
+			service: 'My services',
+			certificates: 'Certificates'
 		},
 		home: {
 			  bornYear: "Born year: ",
@@ -68,7 +69,10 @@ Vue.use(MultiLanguage, {
 			experience: '<i class="ti-time"></i>Experience',
 			references: '<i class="ti-file"></i>References',
 			lastestPost: '<i class="ti-comments"></i>Lastest Post',
-			contact: '<i class="ti-mobile"></i>Contact'
+			contact: '<i class="ti-mobile"></i>Contact',
+			certificates: '<i class="ti-heart"></i>Certificates',
+			service: '<i class="ti-file"></i>Services',
+
 		},
 		others: {
 			name:'Navegation',
@@ -112,7 +116,8 @@ Vue.use(MultiLanguage, {
 			languajeVersion: 'IDIOMA',
 			english: 'Ingles',
 			spanish: 'Español',
-			service: 'Mis servicios'
+			service: 'Mis servicios',
+			certificates: 'Certificados'
 		},
 		home: {
 		  bornYear: "Fecha de nacimiento: ",
@@ -133,8 +138,10 @@ Vue.use(MultiLanguage, {
 			works: '<i class="ti-heart"></i>Mis trabajos',
 			experience: '<i class="ti-time"></i>Experiencia',
 			references: '<i class="ti-file"></i>Referencias',
+			service: '<i class="ti-file"></i>Servicios',
 			lastestPost: '<i class="ti-comments"></i>Ultimas publicaciones',
-			contact: '<i class="ti-mobile"></i>Contacto'
+			contact: '<i class="ti-mobile"></i>Contacto',
+			certificates: '<i class="ti-heart"></i>Certificados'
 		},
 		others: {
 			name:'Navegacion',

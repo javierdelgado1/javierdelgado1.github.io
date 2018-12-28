@@ -5,7 +5,8 @@
 			<h3 class="text-muted" v-lang.menu.service></h3>
 			<div class="row">
 				<div class="col-sm-6" v-for="(service, index) in services">
-					<div   class="icon-box icon-box-1 text-center animated" data-animation="zoomIn">
+					<!--<div   class="icon-box icon-box-1 text-center animated" data-animation="zoomIn">-->
+					<div   class="icon-box icon-box-1 text-center">
 						<span class="icon icon-muted icon-xl"><i :class="service.class"></i></span>
 						<h3 class="mb-10">{{service.title}}</h3>
 						<p class="lead text-muted" v-if="language=='es'"  v-html="service.description_es" ></p>

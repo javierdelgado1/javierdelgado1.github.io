@@ -31,8 +31,8 @@
 					<li v-if="menu.references" >
 						<a href="#" v-scroll-to="'#references'"    v-lang.nav.references></a>
 					</li>
-					<li v-if="menu.service" >
-						<a href="#" v-scroll-to="'#references'"    v-lang.nav.service></a>
+					<li v-if="menu.services" >
+						<a href="#" v-scroll-to="'#services'"    v-lang.nav.service></a>
 					</li>
 					<li v-if="menu.lastestPost" >
 						<a href="#" v-scroll-to="'#latest-posts'"  v-lang.nav.lastestPost></a>

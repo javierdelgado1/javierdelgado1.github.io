@@ -10,7 +10,7 @@
 					<!--<a href="blog.html">Blog</a>
 					<a href="documentation.html" target="_blank">Docs</a>-->
 				</nav>
-				<nav class="language menu module right hidden-xs">
+				<nav class="language menu module right">
 					<span v-lang.menu.languajeVersion></span>
 					<a  :class="{ 'active': lang=='en' }" @click="changeLanguage('en')" href="#" v-lang.menu.english></a>
 					<a  :class="{ 'active': lang=='es' }" @click="changeLanguage('es')" href="#" v-lang.menu.spanish></a>

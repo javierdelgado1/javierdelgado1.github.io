@@ -49,7 +49,7 @@
 					</div>
 				</div>
 			</div>
-			<a :href="home.url" class="btn btn-section btn-primary">
+			<a :href="home.url_cv" class="btn btn-section btn-primary" target="_blank">
 				<span class="i-before i" >
 					<i :class="''+home.icon"></i>
 					<i class="ti-arrow-down"></i>
@@ -81,7 +81,8 @@
 							            label_en:"",
 							            label_es:"",
 							            icon:"",
-							            url:""
+										url:"",
+										url_cv:"",
 
 							        }
 						}
@@ -100,7 +101,9 @@
 				    this.home.label_es=datos.label_es;
 				    this.home.label_en=datos.label_en;
 				    this.home.icon=datos.icon;
-				    this.home.url=datos.url;
+					this.home.url=datos.url;
+				    this.home.url_cv=datos.url_cv;
+					
 
 				   // console.log(this.home)
 			      //console.log(snapshot.val())

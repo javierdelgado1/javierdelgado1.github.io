@@ -52,10 +52,11 @@ Vue.use(MultiLanguage, {
 			  bornYear: "Born year: ",
 			  address: 'Address: ',
 			  email : 'E-mail: ',
-			  checkMy:'Check my <strong>works</strong> ',
+			  checkMy:'Download my <strong>CV</strong> ',
 			  works: 'works',
 			  followme: 'Follow me!',
-			  phone: 'Phone: '
+			  phone: 'Phone: ',
+			  experience: 'Experiencie: '
 			},
 		about : {
 			description: "Hola soy Javier Delgado Ingeniero en Computación, me apasiona todo lo que está relacionado con la tecnológia, ciencias computacionales, desarrollo de aplicaciones de entorno web, sistemas, páginas web, bases de datos, seguridad informática, posicionamiento en buscadores, tecnológia, internet, robótica y electrónica.  Siempre he sentido el gran interés por la tecnológia y en especial por las computadoras y las relacionadas a estas, esto me dio el deseo de querer saber de cómo funcionan las tecnologías y de saber cómo se pueden desarrollar, sabiendo que esto es el futuro, por lo que decidí estudiar Ing. En Computación de la cual soy egresado de la Universidad de Oriente Nucleo Anzoategui, Barcelona Edo. Anzoátegui Venezuela.						 Gracias a mis estudios y experiencias laborales tengo una gran amplia variedad de conocimientos en el área de programación y de robótica (todo descrito en detalle más abajo) Actualmente hablo español, mi lengua nativa, lenguaje gestual (lenguaje de señas) además manejo ingles intermedio con total habilidad para leer y escribir (actualmente estoy en proceso de aprendizaje). Tengo experiencia laboral en desarrollo de aplicaciones web, desktop (java) así como también en la creación y mantenimiento de sitios web."
@@ -123,10 +124,11 @@ Vue.use(MultiLanguage, {
 		  bornYear: "Fecha de nacimiento: ",
 		  address: 'Direccion:',
 		  email : 'Correo:',
-		  checkMy:'Chequea mis <strong>trabajos</strong>',
+		  checkMy:'Descarga mi <strong>curriculum</strong>',
 		  works: ' trabajos',
 		  followme: '¡Sigueme!',
-		  phone: 'telefono: '
+		  phone: 'telefono: ',
+		  experience: 'Experiencie: '
 		},
 		about : {
 			description: "Hola soy Javier Delgado Ingeniero en Computación, me apasiona todo lo que está relacionado con la tecnológia, ciencias computacionales, desarrollo de aplicaciones de entorno web, sistemas, páginas web, bases de datos, seguridad informática, posicionamiento en buscadores, tecnológia, internet, robótica y electrónica.  Siempre he sentido el gran interés por la tecnológia y en especial por las computadoras y las relacionadas a estas, esto me dio el deseo de querer saber de cómo funcionan las tecnologías y de saber cómo se pueden desarrollar, sabiendo que esto es el futuro, por lo que decidí estudiar Ing. En Computación de la cual soy egresado de la Universidad de Oriente Nucleo Anzoategui, Barcelona Edo. Anzoátegui Venezuela.						 Gracias a mis estudios y experiencias laborales tengo una gran amplia variedad de conocimientos en el área de programación y de robótica (todo descrito en detalle más abajo) Actualmente hablo español, mi lengua nativa, lenguaje gestual (lenguaje de señas) además manejo ingles intermedio con total habilidad para leer y escribir (actualmente estoy en proceso de aprendizaje). Tengo experiencia laboral en desarrollo de aplicaciones web, desktop (java) así como también en la creación y mantenimiento de sitios web."

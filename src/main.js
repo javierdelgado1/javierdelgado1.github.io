@@ -30,7 +30,7 @@ Vue.use(VueScrollTo, {
 Vue.use(MultiLanguage, {
 	default: 'en',
 	en: {
-		myname:'Javier Delgado',
+		myname:'Ing. Javier Delgado',
 		hi: "I'm Javier",
 		type: "Proffesional Web developer full stack",
 		menu: {
@@ -102,7 +102,7 @@ Vue.use(MultiLanguage, {
 		
 	},
 	es: {
-		myname:'Javier Delgado',
+		myname:'Ing. Javier Delgado',
 		hi: 'Hola soy Javier',
 		type: "Ing. en Computacion, profesional en el desarrollo web",
 		menu: {

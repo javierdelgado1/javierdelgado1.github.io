@@ -10,7 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0-rc.6",
+    "bootstrap-vue": "^2.0.0-rc.12",
     "firebase": "4.8.0",
     "vue": "^2.5.16",
     "vue-carousel": "^0.6.13",

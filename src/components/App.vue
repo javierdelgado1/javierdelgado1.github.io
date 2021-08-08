@@ -3,7 +3,7 @@
     <Loader />
     <!-- BG Image -->
     <div class="bg-body bg-image zooming">
-      <img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/bg_frontend.jpg" alt="">
+      <img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/bg_frontend.jpg" alt="" >
     </div>
     <Header />
     

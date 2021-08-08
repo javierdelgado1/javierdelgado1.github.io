@@ -6,7 +6,7 @@
 		<div class="panel-wrapper">
 			<!-- Photo -->
 			<div class="photo">
-				<img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/avatars/avatar_square.jpg" alt="">
+				<img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/avatars/avatar_square.jpg" alt="" width="310" v-bind:style="styleImg" >
 			</div>
 
 			<!-- Menu -->
@@ -92,8 +92,10 @@
 				name: "",
 				text: "",
 				email: "" ,
-                menu: {}
-
+                menu: {},
+				styleImg:{
+					maxWidth: 'unset'
+				}
 			}
 		},
 	    mounted() {

@@ -7,28 +7,10 @@
 					<div class="col-sm-6">
 						<!-- Icon Box -->
 						<div class="icon-box icon-box-2">
-							<span class="icon icon-sm icon-circle icon-primary"><i class="fa fa-map-marker"></i></span>
-							<div class="icon-box-content">
-								<h6 class="text-muted" v-lang.contact.address></h6>
-								<address class="text-md mb-0">
-								{{contact.address}}
-								</address>
-							</div>
-						</div>
-						<!-- Icon Box -->
-						<div class="icon-box icon-box-2">
 							<span class="icon icon-sm icon-circle icon-primary"><i class="fa fa-envelope"></i></span>
 							<div class="icon-box-content">
 								<h6 class="text-muted" v-lang.contact.email></h6>
 								<a href="#" class="link-underline text-md">{{contact.email}}</a>
-							</div>
-						</div>
-						<!-- Icon Box -->
-						<div class="icon-box icon-box-2">
-							<span class="icon icon-sm icon-circle icon-primary"><i class="fa fa-phone"></i></span>
-							<div class="icon-box-content">
-								<h6 class="text-muted" v-lang.contact.phone></h6>
-								<a href="#" class="text-md">{{contact.phone}}</a>
 							</div>
 						</div>
 					</div>
@@ -59,7 +41,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="google-map" class="h-300" data-latitude="10.2094606" data-longitude="-64.6331302"></div>
+			<!-- <div id="google-map" class="h-300" data-latitude="10.2094606" data-longitude="-64.6331302"></div> -->
 		</section>
 </template>
 

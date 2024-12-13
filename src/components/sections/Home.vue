@@ -27,14 +27,7 @@
 							<dd>+{{home.experience}} years</dd>
 						</dl>
 					</div>
-					<div class="col-sm-4">
-						<dl class ="description-2">
-							<dt v-lang.home.address></dt>
-							<dd>{{home.address_es}}</dd>
-							<dt v-lang.home.phone></dt>
-							<dd>{{home.phone}}</dd>
-						</dl>
-					</div>
+					
 					<div class="col-sm-4">
 						<dl class="description-2">
 							<dt v-lang.home.email></dt>

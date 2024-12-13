@@ -71,7 +71,6 @@ import Reference from './sections/Reference.vue'
 import LastestPost from './sections/LastestPost.vue'
 import Contact from './sections/Contact.vue'
 import Others from './layouts/Others.vue'
-import Project from './sections/Project.vue'
 import {firebaseApp, query_menu, query_socials} from './firebaseApp'
 import Certificates from './sections/Certificates.vue'
 
@@ -105,11 +104,9 @@ export default {
     Pricing,
     Works,
     Experience,
-    Reference,
     LastestPost,
     Contact,
     Others,
-    Project,
     Certificates
 
   },

@@ -54,6 +54,7 @@
           <img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/avatars/avatar_square_sm.jpg" alt="">
           <span class="name" v-html="$t('myname')"></span>
         </div>
+        <a href="#" class="panel-toggle" @click.prevent="togglePanel"><span><span></span></span></a>
       </div>
     </div>
   </header>
@@ -75,6 +76,9 @@ export default {
     changeLanguage(lang) {
       i18n.global.locale.value = lang
       localStorage.setItem('vue-lang', lang)
+    },
+    togglePanel() {
+      document.body.classList.toggle('panel-open')
     }
   }
 }

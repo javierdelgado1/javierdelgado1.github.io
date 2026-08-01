@@ -2,8 +2,8 @@
   <div id="app">
     <Loader />
     <!-- BG Image -->
-    <div class="bg-body bg-image zooming">
-      <img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/bg_frontend.jpg" alt="">
+    <div class="bg-body bg-image zooming" :style="{ backgroundImage: 'url(' + bgImage + ')' }">
+      <img :src="bgImage" alt="">
     </div>
     <Header />
 
@@ -78,7 +78,8 @@ export default {
       socials: [],
       menu: {},
       showProject: false,
-      currentWork: {}
+      currentWork: {},
+      bgImage: 'https://javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/bg_frontend.jpg'
     }
   },
   computed: {
@@ -96,6 +97,8 @@ export default {
   mounted() {
     this.menu = query_menu
     this.socials = query_socials
+    // core.js añadía body.loaded al cargar; revela el header (body.loaded #header).
+    document.body.classList.add('loaded')
   },
   methods: {
     closeProject() {

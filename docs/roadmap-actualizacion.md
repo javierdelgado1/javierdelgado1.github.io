@@ -49,10 +49,12 @@ Marca cada casilla `- [ ]` → `- [x]` conforme avances.
 - [x] Sustituir `eventBus` (`global.js`) por `mitt`
 - [x] Verificar que el build de Vite compila sin errores — `vite build` verde (240 kB JS / 306 kB CSS), `vite preview` sirve HTTP 200
 
-> **Pendiente de verificación visual:** el build compila y sirve, pero falta una
-> revisión en navegador (runtime, estilos, i18n al cambiar idioma, modal y carrusel).
-> El toggle del panel móvil (`#panel`) se reimplementará en Vue en la Fase 5 (se
-> eliminó el botón jQuery `panel-toggle`).
+> **Verificación visual completada:** la app migrada carga en navegador, header y
+> fondo visibles, i18n reacciona al cambiar idioma, modal de proyecto y carrusel
+> funcionan. El toggle del panel móvil (`#panel`) y el header sticky on-scroll,
+> que gestionaba `core.js` con jQuery, ya se reimplementaron en Vue (`Header.vue` /
+> `Others.vue` / `App.vue`). Pendiente: el `v-scroll-to` no compensa el offset del
+> header al navegar a una sección.
 
 ## Fase 3 — Reemplazo de dependencias de Vue 2
 

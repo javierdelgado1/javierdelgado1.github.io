@@ -2,57 +2,49 @@
   <div id="app">
     <Loader />
     <!-- BG Image -->
-    <div class="bg-body bg-image zooming">
-      <img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/bg_frontend.jpg" alt="" >
+    <div class="bg-body bg-image zooming" :style="{ backgroundImage: 'url(' + bgImage + ')' }">
+      <img :src="bgImage" alt="">
     </div>
     <Header />
-    
+
     <!-- Content -->
     <div id="content" class="container">
       <div id="photo">
         <img src="https://javierdelgado.com.ve/apps/portfolio/src/assets/img/avatars/avatar.jpg" alt="">
       </div>
       <div id="sections-wrapper">
-        <Home v-if="menu.home" :socials="socials"/>
+        <Home v-if="menu.home" :socials="socials" />
         <About v-if="menu.about" />
-        <Skill v-if="menu.skills"/>
-        <PromoVideo v-if="menu.promoVideo"/>
+        <Skill v-if="menu.skills" />
+        <PromoVideo v-if="menu.promoVideo" />
         <Services v-if="menu.services" />
-        <Pricing v-if="menu.princing"/>
+        <Pricing v-if="menu.princing" />
         <Works v-if="menu.works" />
-        <Experience v-if="menu.experience"/>
+        <Experience v-if="menu.experience" />
         <Reference v-if="menu.reference" />
         <LastestPost v-if="menu.lastestPost" />
         <Certificates v-if="menu.certificates" />
-        <Contact  />
       </div>
-
-
     </div>
+
     <!-- Share -->
     <div id="share-it">
       <a href="#" class="icon icon-circle icon-share"><i class="fa fa-share-alt"></i></a>
       <ul class="share-list">
-        <li v-for="(social, index) in socials" v-if="social.isVisible" :key="index">
-          <a :href="social.url"  target="_blank" class="icon icon-circle" :class="social.class">
+        <li v-for="(social, index) in visibleSocials" :key="index">
+          <a :href="social.url" target="_blank" class="icon icon-circle" :class="social.class">
             <i :class="social.fa"></i>
           </a>
         </li>
       </ul>
-
     </div>
 
     <Others />
 
-      <!-- Panel / End -->
-
-    <!-- Ajax Modal -->
-    <div id="ajax-modal">
-          <project />
+    <!-- Project modal (reactivo, reemplaza el ajax-modal jQuery) -->
+    <div v-if="showProject" id="ajax-modal" class="loading-finished">
+      <Project :work="currentWork" @close="closeProject" />
     </div>
-    <!-- Ajax Loader -->
-    <svg id="ajax-loader" class="loader" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="circle" fill="none" stroke-width="3" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
-
   </div>
 </template>
 
@@ -69,61 +61,77 @@ import Works from './sections/Works.vue'
 import Experience from './sections/Experience.vue'
 import Reference from './sections/Reference.vue'
 import LastestPost from './sections/LastestPost.vue'
-import Contact from './sections/Contact.vue'
-import Others from './layouts/Others.vue'
-import {query_menu, query_socials} from './data'
 import Certificates from './sections/Certificates.vue'
+import Others from './layouts/Others.vue'
 import Project from './sections/Project.vue'
-
-
-
-
+import { query_menu, query_socials } from './data'
+import { eventBus } from './global'
 
 export default {
   name: 'app',
-  data () {
+  components: {
+    Loader, Header, Home, About, Skill, PromoVideo, Services, Pricing,
+    Works, Experience, Reference, LastestPost, Certificates, Others, Project
+  },
+  data() {
     return {
-      socials: [
-                  /*{ url : 'https://twitter.com/cheche338', name: 'Twitter', class: 'icon-twitter', fa:'fa fa-twitter'  },
-                  { url : 'https://www.facebook.com/04248309075j', name: 'Facebook', class: 'icon-facebook', fa:'fa fa-facebook'  },
-                  { url : 'https://www.instagram.com/javierdelgado1/', name: 'Instagram', class: 'icon-instagram',  fa:'fa fa-instagram' },
-                  { url : 'skype:cheche338?call', name: 'Skype', class: 'icon-skype', fa:'fa fa-skype'  },
-                  { url : 'https://ve.linkedin.com/in/javierdelgado1', name: 'LinkedIn', class: 'icon-linkedin', fa:'fa fa-linkedin'  }*/
-
-               ],
-               menu: {}
+      socials: [],
+      menu: {},
+      showProject: false,
+      currentWork: {},
+      bgImage: 'https://javierdelgado.com.ve/apps/portfolio/src/assets/img/photos/bg_frontend.jpg'
     }
   },
-  components:{
-    Loader,
-    Header,
-    Home,
-    About,
-    Skill,
-    PromoVideo,
-    Services,
-    Pricing,
-    Works,
-    Experience,
-    Reference,
-    LastestPost,
-    Contact,
-    Others,
-    Certificates,
-    project: Project
-
-  },
-  methods:{
-
-  },
-  created(){
-    let lang =localStorage.getItem('vue-lang') 
-    this.language =   lang=='es' || lang == 'en'?  lang : 'en'
-        
-  },
-    mounted() {
-        this.menu = query_menu
-        this.socials = query_socials
+  computed: {
+    visibleSocials() {
+      return (this.socials || []).filter(s => s.isVisible)
     }
+  },
+  created() {
+    eventBus.on('showProject', (work) => {
+      this.currentWork = work
+      this.showProject = true
+      document.documentElement.classList.add('locked-scrolling')
+    })
+  },
+  mounted() {
+    this.menu = query_menu
+    this.socials = query_socials
+    // core.js añadía body.loaded al cargar; revela el header (body.loaded #header).
+    document.body.classList.add('loaded')
+    // core.js bindeaba setHeader() al scroll: añade body.sticky-layout cuando
+    // scrollY >= altura del #top-bar (header fijo al hacer scroll).
+    this.setHeader()
+    window.addEventListener('scroll', this.setHeader, { passive: true })
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.setHeader)
+  },
+  methods: {
+    setHeader() {
+      const topBar = document.getElementById('top-bar')
+      const topBarHeight = topBar ? topBar.offsetHeight : 0
+      if (window.scrollY >= topBarHeight) {
+        document.body.classList.add('sticky-layout')
+      } else {
+        document.body.classList.remove('sticky-layout')
+      }
+    },
+    closeProject() {
+      this.showProject = false
+      document.documentElement.classList.remove('locked-scrolling')
+    }
+  }
 }
 </script>
+
+<style>
+/* El modal de proyecto ahora se controla con v-if (antes lo mostraba core.js con
+   jQuery). El CSS del template lo oculta con display:none; lo forzamos a block. */
+#ajax-modal {
+  display: block !important;
+}
+#ajax-modal .ajax-modal-wrapper {
+  display: block !important;
+}
+</style>

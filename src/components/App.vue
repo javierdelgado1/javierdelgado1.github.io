@@ -99,8 +99,24 @@ export default {
     this.socials = query_socials
     // core.js añadía body.loaded al cargar; revela el header (body.loaded #header).
     document.body.classList.add('loaded')
+    // core.js bindeaba setHeader() al scroll: añade body.sticky-layout cuando
+    // scrollY >= altura del #top-bar (header fijo al hacer scroll).
+    this.setHeader()
+    window.addEventListener('scroll', this.setHeader, { passive: true })
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.setHeader)
   },
   methods: {
+    setHeader() {
+      const topBar = document.getElementById('top-bar')
+      const topBarHeight = topBar ? topBar.offsetHeight : 0
+      if (window.scrollY >= topBarHeight) {
+        document.body.classList.add('sticky-layout')
+      } else {
+        document.body.classList.remove('sticky-layout')
+      }
+    },
     closeProject() {
       this.showProject = false
       document.documentElement.classList.remove('locked-scrolling')

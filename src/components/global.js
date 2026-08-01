@@ -1,3 +1,4 @@
+import mitt from 'mitt'
 
-import Vue from 'vue';
-export const eventBus = new Vue();
+// Reemplazo del eventBus de Vue 2 (Works <-> Project) con mitt.
+export const eventBus = mitt()

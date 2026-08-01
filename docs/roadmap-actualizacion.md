@@ -36,31 +36,36 @@ Marca cada casilla `- [ ]` → `- [x]` conforme avances.
 
 ## Fase 2 — Migración del andamiaje (Vue 3 + Vite)
 
-- [ ] Actualizar Node a 20 LTS (o 22) y `.nvmrc` — movido desde Fase 1 (Vite lo requiere)
-- [ ] Eliminar jQuery + `core.js`/`plugins.js` de `index.html` — la UI del template (panel toggle, ajax-modal) se reimplementa en Vue
-- [ ] Centralizar URLs hardcodeadas (`javierdelgado.com.ve`) y migrar imágenes al pipeline del bundler — movido desde Fase 1
-- [ ] Crear proyecto Vite nuevo con template Vue (`npm create vite@latest`) en una rama `migration/vue3`
-- [ ] Configurar Vite (alias `@`, `src`, SCSS, env vars, `base` para GitHub Pages)
-- [ ] Mover configuración de alias y entry al nuevo `vite.config.js`
-- [ ] Trasladar `src/assets/data/db.json` y `data.js` (sin cambios)
-- [ ] Migrar `App.vue` a Vue 3 (`<script setup>`)
-- [ ] Migrar componentes de `src/components/layouts/` (Loader, Header, Others)
-- [ ] Migrar componentes de `src/components/sections/` (Home, About, Skill, Works, etc.)
-- [ ] Sustituir `eventBus` (`global.js`) por `mitt` o Pinia store
-- [ ] Verificar que el build de Vite compila sin errores
+- [x] Actualizar Node a 20 LTS (o 22) y `.nvmrc` — `.nvmrc` = `20`, build ejecutado con Node 24
+- [x] Eliminar jQuery + `core.js`/`plugins.js` de `index.html` — borrado todo `src/assets/js/` (jQuery, plugins, core, masonry, owl, isotope, etc.); `index.html` ya no carga scripts del template
+- [ ] Centralizar URLs hardcodeadas (`javierdelgado.com.ve`) y migrar imágenes al pipeline del bundler — **APLAZADO a Fase 6** (requiere definir el despliegue/GitHub Pages `base`)
+- [x] Crear proyecto Vite nuevo con template Vue en rama `migration/vue3`
+- [x] Configurar Vite (alias `@`, `base: './'` para GitHub Pages) en `vite.config.js`
+- [x] Mover configuración de alias y entry al nuevo `vite.config.js`
+- [x] Trasladar `src/assets/data/db.json` y `data.js` (sin cambios)
+- [x] Migrar `App.vue` a Vue 3 (Options API; modal de proyecto reactivo reemplaza ajax-modal jQuery)
+- [x] Migrar componentes de `src/components/layouts/` (Loader, Header, Others)
+- [x] Migrar componentes de `src/components/sections/` (Home, About, Skill, Works, Services, Pricing, Experience, Reference, LastestPost, PromoVideo, Certificates, Project)
+- [x] Sustituir `eventBus` (`global.js`) por `mitt`
+- [x] Verificar que el build de Vite compila sin errores — `vite build` verde (240 kB JS / 306 kB CSS), `vite preview` sirve HTTP 200
+
+> **Pendiente de verificación visual:** el build compila y sirve, pero falta una
+> revisión en navegador (runtime, estilos, i18n al cambiar idioma, modal y carrusel).
+> El toggle del panel móvil (`#panel`) se reimplementará en Vue en la Fase 5 (se
+> eliminó el botón jQuery `panel-toggle`).
 
 ## Fase 3 — Reemplazo de dependencias de Vue 2
 
-- [ ] `vue-router@3` → `vue-router@4`
-- [ ] `vuex@3` → **Pinia** (migrar estado, si lo hay)
-- [ ] `vue-multilanguage` → `vue-i18n` (migrar diccionarios `en`/`es` de `main.js`)
-- [ ] `vue-carousel` → `@splidejs/vue-splide`
-- [ ] `vue-gallery` → `vue-easy-lightbox` o lightbox nativo
-- [ ] `vue-typer` → efecto typer propio o `vue-typewriter`
-- [ ] `vue-progress-bar` / `vue-progress-path` → componente propio con CSS
-- [ ] `vueisotope` (Isotope) → layout con CSS Grid
-- [ ] `vue-scrollto` → `Element.scrollIntoView()` nativo
-- [ ] `bootstrap-vue` → `bootstrap-vue-3` o Bootstrap nativo (revisar qué componentes se usan)
+- [x] ~~`vue-router@3` → `vue-router@4`~~ — no aplica: `vue-router` no se usaba
+- [x] ~~`vuex@3` → Pinia~~ — no aplica: `vuex` no se usaba
+- [x] `vue-multilanguage` → `vue-i18n` (diccionarios `en`/`es` migrados a `src/i18n.js`; `v-lang.x.y` → `v-html="$t('x.y')"`; `language` como computed global reactivo)
+- [x] `vue-carousel` → `@splidejs/vue-splide`
+- [x] `vue-gallery` → `vue-easy-lightbox`
+- [x] `vue-typer` → componente propio `src/components/Typer.vue` (registrado global como `<vue-typer>`)
+- [x] ~~`vue-progress-bar` / `vue-progress-path`~~ — no aplica: no se usaban (Skill usa `.progress-bar` CSS nativo)
+- [x] `vueisotope` (Isotope) + jQuery Masonry → CSS Grid en `Works.vue`
+- [x] `vue-scrollto` → directiva propia `v-scroll-to` con `scrollIntoView` (`src/directives.js`)
+- [x] ~~`bootstrap-vue`~~ — no aplica: no se usaba
 
 ## Fase 4 — Backend del formulario de contacto — ⚠️ OBSOLETO
 
@@ -103,16 +108,16 @@ Marca cada casilla `- [ ]` → `- [x]` conforme avances.
 
 ## Progreso general
 
-- Fase 0 — Seguridad inmediata: `5/9` (restantes: 2 manuales de rotación de API key + jQuery aplazado a Fase 2)
-- Fase 1 — Limpieza y entorno: `5/8` (restantes: Node y 2 items aplazados a Fase 2/5)
-- Fase 2 — Migración Vue 3 + Vite: `0/12` (incluye Node, jQuery/core y URLs movidas desde Fase 0/1)
-- Fase 3 — Reemplazo de dependencias: `0/10`
+- Fase 0 — Seguridad inmediata: `5/9` (restantes: 2 manuales de rotación de API key)
+- Fase 1 — Limpieza y entorno: `5/8` (restantes: URL e iconos aplazados a Fase 5/6)
+- Fase 2 — Migración Vue 3 + Vite: `11/12` (restante: URLs hardcodeadas → Fase 6; pendiente verificación visual)
+- Fase 3 — Reemplazo de dependencias: `10/10` ✅
 - Fase 4 — Backend formulario: `4/4` ✅ obsoleto (sección de contacto eliminada)
 - Fase 5 — Estilos y assets: `0/5`
 - Fase 6 — Despliegue y CI/CD: `0/6`
 - Fase 7 — Calidad y rendimiento: `0/7`
 
-> Total: **14/61 tareas completadas**
+> Total: **35/61 tareas completadas**
 
 ---
 

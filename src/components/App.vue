@@ -31,7 +31,7 @@
     <div id="share-it">
       <a href="#" class="icon icon-circle icon-share"><i class="fa fa-share-alt"></i></a>
       <ul class="share-list">
-        <li v-for="(social, index) in socials" v-if="social.isVisible" :key="index">
+        <li v-for="(social, index) in visibleSocials" :key="index">
           <a :href="social.url" target="_blank" class="icon icon-circle" :class="social.class">
             <i :class="social.fa"></i>
           </a>
@@ -79,6 +79,11 @@ export default {
       menu: {},
       showProject: false,
       currentWork: {}
+    }
+  },
+  computed: {
+    visibleSocials() {
+      return (this.socials || []).filter(s => s.isVisible)
     }
   },
   created() {

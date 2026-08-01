@@ -49,9 +49,6 @@
 					<li v-if="menu.certificates" >
 						<a href="#" v-scroll-to="'#certificates'"  v-lang.menu.certificates></a>
 					</li>
-					<li v-if="menu.contact" >
-						<a href="#" v-scroll-to="'#contact'"  v-lang.menu.contact></a>
-					</li>
 					<li class="icon-link">
 						<a href="#" class="panel-toggle" data-toggle="panel"><span><span></span></span></a>
 					</li>

@@ -24,7 +24,6 @@
         <Reference v-if="menu.reference" />
         <LastestPost v-if="menu.lastestPost" />
         <Certificates v-if="menu.certificates" />
-        <Contact  />
       </div>
 
 
@@ -69,7 +68,6 @@ import Works from './sections/Works.vue'
 import Experience from './sections/Experience.vue'
 import Reference from './sections/Reference.vue'
 import LastestPost from './sections/LastestPost.vue'
-import Contact from './sections/Contact.vue'
 import Others from './layouts/Others.vue'
 import {query_menu, query_socials} from './data'
 import Certificates from './sections/Certificates.vue'
@@ -107,7 +105,6 @@ export default {
     Experience,
     Reference,
     LastestPost,
-    Contact,
     Others,
     Certificates,
     project: Project

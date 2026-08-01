@@ -4,7 +4,6 @@ import App from './components/App.vue'
 import MultiLanguage from 'vue-multilanguage'
 import VueScrollTo  from 'vue-scrollto'
 
-import { VueTyper } from 'vue-typer'
 import VueCarousel from 'vue-carousel';
 
 var VueTyperPlugin = require('vue-typer').default
@@ -38,7 +37,6 @@ Vue.use(MultiLanguage, {
 			experience: 'Experience &amp; jobs',
 			references: 'References',
 			lastestPost: 'Lastest Post',
-			contact: 'Contact',
 			languajeVersion: 'LANGUAGE VERSION',
 			english: 'English',
 			spanish: 'Spanish',
@@ -67,27 +65,12 @@ Vue.use(MultiLanguage, {
 			experience: '<i class="ti-time"></i>Experience',
 			references: '<i class="ti-file"></i>References',
 			lastestPost: '<i class="ti-comments"></i>Lastest Post',
-			contact: '<i class="ti-mobile"></i>Contact',
 			certificates: '<i class="ti-heart"></i>Certificates',
 			service: '<i class="ti-file"></i>Services',
 
 		},
 		others: {
-			name:'Navegation',
-			title_form: 'Contact me',
-			input_name:'Name',
-			input_email:'E-mail',
-			input_message:'Message'
-
-		},
-		contact:{
-			address: 'Address',
-			email: 'E-mail',
-			phone: 'Phone',
-			button_send_message:'<span>Send Message</span>',
-			input_name:'Name',
-			input_email:'E-mail',
-			input_message:'Message'
+			name:'Navegation'
 		},
 		works:{
 			viewProject: "Case Study",
@@ -110,7 +93,6 @@ Vue.use(MultiLanguage, {
 			experience: 'Experiencia &amp;  trabajos',
 			references: 'Referencias',
 			lastestPost: 'Ultimas publicaciones',
-			contact: 'Contacto',
 			languajeVersion: 'IDIOMA',
 			english: 'Ingles',
 			spanish: 'Español',
@@ -139,25 +121,10 @@ Vue.use(MultiLanguage, {
 			references: '<i class="ti-file"></i>Referencias',
 			service: '<i class="ti-file"></i>Servicios',
 			lastestPost: '<i class="ti-comments"></i>Ultimas publicaciones',
-			contact: '<i class="ti-mobile"></i>Contacto',
 			certificates: '<i class="ti-heart"></i>Certificados'
 		},
 		others: {
-			name:'Navegacion',
-			title_form: 'Contactame',
-			input_name:'Nombre',
-			input_email:'Correo',
-			input_message:'Mensaje'
-
-		},
-		contact:{
-			address: 'Direccion',
-			email: 'Correo',
-			phone: 'Telefono',
-			button_send_message:'<span>Enviar Mensaje</span>',
-			input_name:'Nombre',
-			input_email:'Correo',
-			input_message:'Mensaje'
+			name:'Navegacion'
 		},
 		works:{
 			viewProject: "Ver Proyecto",

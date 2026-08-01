@@ -7,10 +7,6 @@
     "label_en": "Certificates",
     "label_es": "Certificados"
   },
-  "contact": {
-    "address": "Santiago de Chile",
-    "email": "hola@javierdelgado.com.ve"
-  },
   "experience": {
     "id0": {
       "date": "08.2010 - 09.2011",
@@ -70,7 +66,6 @@
   "menu": {
     "about": true,
     "certificates": true,
-    "contact": true,
     "experience": false,
     "home": true,
     "lastestPost": false,

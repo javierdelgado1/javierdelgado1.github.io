@@ -22,7 +22,7 @@
 
 <script>
 import VueGallery from "vue-gallery";
-import {firebaseApp, imagesCertificates} from '../firebaseApp'
+import {imagesCertificates} from '../data'
 
 export default {
   data: function() {
@@ -37,23 +37,12 @@ export default {
     gallery: VueGallery
   },
   mounted() {
-    let datos = " ";
-    imagesCertificates.on(
-      "value",
-      function(snapshot) {
-        datos = snapshot.val();
-        this.images=[];
-       for (var key in datos){
-          this.images.push(datos[key])
-      }
-      this.render = true;
-
-      }.bind(this),
-      function(errorObject) {
-        console.log("The read failed: " + errorObject.code);
-      }
-    );
-    //console.log(this.skills)
+    const datos = imagesCertificates;
+    this.images = [];
+    for (var key in datos) {
+      this.images.push(datos[key])
+    }
+    this.render = true;
   }
 };
 </script>

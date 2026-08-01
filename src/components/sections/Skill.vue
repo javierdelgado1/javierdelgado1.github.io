@@ -16,7 +16,7 @@
 </template>
 
 <script >
-	import {firebaseApp, skills} from '../firebaseApp'
+	import {skills} from '../data'
 
 	export default{
 		data(){
@@ -27,18 +27,8 @@
 			}
 		},
 		mounted() {
-			    let datos=" ";
-			    skills.on("value", function(snapshot) {
-			      datos = snapshot.val()
-			      //console.log(datos)
-			      this.skills=datos
-			      this.render=true
-
-			    }.bind(this), function (errorObject) {
-			      console.log("The read failed: " + errorObject.code);
-			    });
-			      //console.log(this.skills)
-
+			    this.skills = skills
+			    this.render = true
 			}
 		
 	}

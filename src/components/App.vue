@@ -71,8 +71,9 @@ import Reference from './sections/Reference.vue'
 import LastestPost from './sections/LastestPost.vue'
 import Contact from './sections/Contact.vue'
 import Others from './layouts/Others.vue'
-import {firebaseApp, query_menu, query_socials} from './firebaseApp'
+import {query_menu, query_socials} from './data'
 import Certificates from './sections/Certificates.vue'
+import Project from './sections/Project.vue'
 
 
 
@@ -104,10 +105,12 @@ export default {
     Pricing,
     Works,
     Experience,
+    Reference,
     LastestPost,
     Contact,
     Others,
-    Certificates
+    Certificates,
+    project: Project
 
   },
   methods:{
@@ -119,24 +122,8 @@ export default {
         
   },
     mounted() {
-        let datos=" ";
-        query_menu.on("value", function(snapshot) {
-            datos = snapshot.val()
-            this.menu=datos
-            console.log(this.menu)
-        }.bind(this), function (errorObject) {
-          console.log("The read failed: " + errorObject.code);
-        });
-
-        query_socials.on("value", function(snapshot) {
-            datos = snapshot.val()
-            this.socials=datos
-            console.log(this.socials)
-        }.bind(this), function (errorObject) {
-          console.log("The read failed: " + errorObject.code);
-        });
-
-           
+        this.menu = query_menu
+        this.socials = query_socials
     }
 }
 </script>

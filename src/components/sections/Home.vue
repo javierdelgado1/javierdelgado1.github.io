@@ -56,7 +56,7 @@
 </template>
 
 <script >
-	import {firebaseApp, perfil} from '../firebaseApp'
+	import {perfil} from '../data'
 	export default{
 		props: ['socials'],
 			data () {
@@ -81,31 +81,19 @@
 						}
 			},
 			mounted() {
-			    let datos=" ";
-			    perfil.on("value", function(snapshot) {
-			      datos = snapshot.val()
-			      	this.home.bornyear=datos.bornyear;
-				    this.home.address_es=datos.address_es;
-				    this.home.email=datos.email;
-				    this.home.experience=datos.experience;
-				    this.home.phone=datos.phone;
-				    this.home.subtitle_es=datos.subtitle_es;
-				    this.home.subtitle_en=datos.subtitle_en;
-				    this.home.label_es=datos.label_es;
-				    this.home.label_en=datos.label_en;
-				    this.home.icon=datos.icon;
-					this.home.url=datos.url;
-				    this.home.url_cv=datos.url_cv;
-					
-
-				   // console.log(this.home)
-			      //console.log(snapshot.val())
-			    }.bind(this), function (errorObject) {
-			      console.log("The read failed: " + errorObject.code);
-			    });
-			    
-
-			    
+			    const datos = perfil;
+			    this.home.bornyear=datos.bornyear;
+			    this.home.address_es=datos.address_es;
+			    this.home.email=datos.email;
+			    this.home.experience=datos.experience;
+			    this.home.phone=datos.phone;
+			    this.home.subtitle_es=datos.subtitle_es;
+			    this.home.subtitle_en=datos.subtitle_en;
+			    this.home.label_es=datos.label_es;
+			    this.home.label_en=datos.label_en;
+			    this.home.icon=datos.icon;
+				this.home.url=datos.url;
+			    this.home.url_cv=datos.url_cv;
 			},
 			components:{
 			}

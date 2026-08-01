@@ -15,7 +15,7 @@
 </template>
 
 <script >
-	import {firebaseApp, about} from '../firebaseApp'
+	import {about} from '../data'
 
 	export default{
 		data () {
@@ -28,14 +28,9 @@
 						}
 			},
 			mounted() {
-			    let datos=" ";
-			    about.on("value", function(snapshot) {
-			        datos = snapshot.val()
-			      	this.about.description_es=datos.description_es;
-				    this.about.description_en=datos.description_en;
-			    }.bind(this), function (errorObject) {
-			      console.log("The read failed: " + errorObject.code);
-			    });
+			    const datos = about;
+			    this.about.description_es=datos.description_es;
+			    this.about.description_en=datos.description_en;
 			}
 	}
 </script>

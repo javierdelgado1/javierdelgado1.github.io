@@ -76,7 +76,7 @@
 	</template>
 
 <script >
-	import {firebaseApp, contact, query_menu} from '../firebaseApp'
+	import {contact, query_menu} from '../data'
 	import {global_url} from '../global'
 
 	export default{	
@@ -99,14 +99,7 @@
 			}
 		},
 	    mounted() {
-	        let datos=" ";
-	        query_menu.on("value", function(snapshot) {
-	            datos = snapshot.val()
-	            this.menu=datos
-	            //console.log(this.menu)
-	        }.bind(this), function (errorObject) {
-	          console.log("The read failed: " + errorObject.code);
-	        });
+	        this.menu = query_menu
 	    },
 		methods:{
 			onContact(){

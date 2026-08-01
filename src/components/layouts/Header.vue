@@ -72,7 +72,7 @@
 </template>
 
 <script >
-    import {firebaseApp, query_menu} from '../firebaseApp'
+    import {query_menu} from '../data'
 	export default {
 		data(){
 			return {
@@ -91,14 +91,7 @@
    			 
 		},
 	    mounted() {
-	        let datos=" ";
-	        query_menu.on("value", function(snapshot) {
-	            datos = snapshot.val()
-	            this.menu=datos
-	            console.log(this.menu)
-	        }.bind(this), function (errorObject) {
-	          console.log("The read failed: " + errorObject.code);
-	        });
+	        this.menu = query_menu
 	    }
 	}
 </script>

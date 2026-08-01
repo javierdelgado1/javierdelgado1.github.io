@@ -19,7 +19,7 @@
 </template>
 
 <script >
-	import {firebaseApp, query_services} from '../firebaseApp'
+	import {query_services} from '../data'
 
 	export default{
 		data(){
@@ -28,29 +28,16 @@
 			}
 		},
 		mounted() {
-		    let datos=" ";
-		    query_services.on("value", function(snapshot) {
-		        datos = snapshot.val()
-		      	this.services=datos;
-		      	//console.log(datos)
-		    	//console.log(this.services)
-			    $('.animated').appear(function() {
-	                $(this).each(function(){ 
-	                        var $target =  $(this);
-	                        var delay = $(this).data('animation-delay');
-	                        setTimeout(function() {
-	                            $target.addClass($target.data('animation')).addClass('visible')
-	                        }, delay);
-	                });
-	            });
-
-		    }.bind(this), function (errorObject) {
-		      console.log("The read failed: " + errorObject.code);
-		    });
-		    console.log(this.services)
-
-		    
-
+		    this.services = query_services;
+		    $('.animated').appear(function() {
+                $(this).each(function(){
+                        var $target =  $(this);
+                        var delay = $(this).data('animation-delay');
+                        setTimeout(function() {
+                            $target.addClass($target.data('animation')).addClass('visible')
+                        }, delay);
+                });
+            });
 		}
 	}
 </script>

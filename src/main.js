@@ -4,14 +4,11 @@ import App from './components/App.vue'
 import MultiLanguage from 'vue-multilanguage'
 import VueScrollTo  from 'vue-scrollto'
 
-import  VueFire  from 'vuefire'
-import  firebase  from 'firebase'
 import { VueTyper } from 'vue-typer'
 import VueCarousel from 'vue-carousel';
 
 var VueTyperPlugin = require('vue-typer').default
 
-Vue.use(VueFire)
 Vue.use(VueScrollTo)
 Vue.use(VueScrollTo, {
      container: "body",

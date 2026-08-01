@@ -105,7 +105,7 @@
 
 
 <script >
-	import {firebaseApp, works} from '../firebaseApp'
+	import {works} from '../data'
 	import {global, eventBus} from '../global'
 	export default{
 	  data() {
@@ -171,74 +171,30 @@
 	      	}
 	      },
 	      mounted() {
-		    let datos=[];
-		    let works_webdesign= firebaseApp.database().ref().child('works').orderByChild("category").equalTo("webdesign")
-		    let works_development= firebaseApp.database().ref().child('works').orderByChild("category").equalTo("development")
-		    let works_bots= firebaseApp.database().ref().child('works').orderByChild("category").equalTo("bots")
-
-
-		    works_webdesign.on("value", function(snapshot) {
-		      datos = snapshot.val()
-		      console.log(datos)
-		     this.webdesigns=datos
-  		     this.webdesigns1=[];
-		     this.webdesigns2=[];
-
-		      let i=0
-		      if (datos != null){
-			      if(datos.length==1 ||  datos.length==0){
-			      	this.webdesigns1=datos
-			      }
-			      else{	
-			      	  while(i++<(datos.length/2))
-				    	  this.webdesigns1.push(datos[i-1])
-			      	  i=(datos.length/2)-1
-		      		  while(i++<(datos.length-1))
-				      	  this.webdesigns2.push(datos[i])
-			      }
+		    const allWorks = Object.values(works)
+		    const splitInHalf = (list, first, second) => {
+		      let i = 0
+		      if (list.length <= 1) {
+		        first.push(...list)
+		        return
 		      }
+		      while (i++ < list.length / 2) first.push(list[i - 1])
+		      i = (list.length / 2) - 1
+		      while (i++ < list.length - 1) second.push(list[i])
+		    }
 
+		    const webdesignWorks = allWorks.filter(w => w.category === 'webdesign')
+		    this.webdesigns1 = []
+		    this.webdesigns2 = []
+		    splitInHalf(webdesignWorks, this.webdesigns1, this.webdesigns2)
 
-		    }.bind(this), function (errorObject) {
-		      console.log("The read failed: " + errorObject.code);
-		    });
+		    const developmentWorks = allWorks.filter(w => w.category === 'development')
+		    this.developments1 = []
+		    this.developments2 = []
+		    splitInHalf(developmentWorks, this.developments1, this.developments2)
+            $('#works-list').attr('style', 'position: relative; height: 500px;')
 
-		    works_development.on("value", function(snapshot) {
-		      datos = []
-		      snapshot.forEach(event => {
-		        datos.push(event.val())
-		      })
-		     this.developments1=[];
-		     this.developments2=[];
-
-		      let i=0
-		      if(datos.length==1 ||  datos.length==0){
-		      	this.developments1=datos
-		      }
-		      else{	
-		      	  while(i++<(datos.length/2))
-			    	  this.developments1.push(datos[i-1])
-		      	  i=(datos.length/2)-1
-	      		  while(i++<(datos.length-1))
-			      	  this.developments2.push(datos[i])
-		      }
-              $('#works-list').attr('style', 'position: relative; height: 500px;')
-
-		    }.bind(this), function (errorObject) {
-		      console.log("The read failed: " + errorObject.code);
-		    });
-
-
-
-		    works_bots.on("value", function(snapshot) {
-		      datos = snapshot.val()
-		      //console.log(datos)
-		      this.bots=datos
-		    }.bind(this), function (errorObject) {
-		      console.log("The read failed: " + errorObject.code);
-		    });
-
-
+		    this.bots = allWorks.filter(w => w.category === 'bots')
 
 		    var $grid = $('.masonry','#content');
 

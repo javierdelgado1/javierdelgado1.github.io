@@ -46,7 +46,7 @@
 </template>
 
 <script >
-	import {firebaseApp, contact} from '../firebaseApp'
+	import {contact} from '../data'
 	import {global_url} from '../global'
 
 	export default{	
@@ -119,17 +119,10 @@
 			}
 		},
 		mounted() {
-			    let datos=" ";
-			    contact.on("value", function(snapshot) {
-			      datos = snapshot.val()
-				    this.contact.address=datos.address;
-				    this.contact.email=datos.email;
-				    this.contact.phone=datos.phone;
-				   // console.log(this.home)
-			      //console.log(snapshot.val())
-			    }.bind(this), function (errorObject) {
-			      console.log("The read failed: " + errorObject.code);
-			    });
+			    const datos = contact;
+			    this.contact.address=datos.address;
+			    this.contact.email=datos.email;
+			    this.contact.phone=datos.phone;
 		}
 
 	}

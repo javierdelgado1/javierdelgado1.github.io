@@ -105,3 +105,14 @@ export default {
   }
 }
 </script>
+
+<style>
+/* El modal de proyecto ahora se controla con v-if (antes lo mostraba core.js con
+   jQuery). El CSS del template lo oculta con display:none; lo forzamos a block. */
+#ajax-modal {
+  display: block !important;
+}
+#ajax-modal .ajax-modal-wrapper {
+  display: block !important;
+}
+</style>

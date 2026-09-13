@@ -4,6 +4,9 @@ dist/
 npm-debug.log
 yarn-error.log
 
+# Credenciales FTP del hosting (usa .env.example como plantilla)
+.env
+
 # Editor directories and files
 .idea
 *.suo

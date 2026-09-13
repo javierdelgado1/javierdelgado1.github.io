@@ -1,31 +1,24 @@
 {
-  "name": "miportafolio",
-  "description": "My portfolio",
-  "version": "2.0.0",
+  "name": "javierdelgado-blog",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Blog estático de Javier Delgado. Genera dist/ a partir de layout/ + posts/*.md y lo publica por FTP en un hosting cPanel.",
   "author": "ingeniero@javierdelgado.com.ve",
   "license": "MIT",
-  "private": true,
-  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node build.js",
+    "dev": "node build.js && node serve.js",
+    "new": "node new-post.js",
+    "clean": "rm -rf dist",
+    "deploy": "bash deploy.sh",
+    "deploy:dry": "bash deploy.sh --dry-run"
   },
   "dependencies": {
-    "@splidejs/vue-splide": "^0.6.12",
-    "mitt": "^3.0.1",
-    "vue": "^3.4.21",
-    "vue-easy-lightbox": "^1.19.0",
-    "vue-i18n": "^9.13.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.8",
-    "vite": "^8.2.0"
-  },
-  "browserslist": [
-    "defaults"
-  ],
-  "allowScripts": {
-    "esbuild@0.21.5": true
+    "basic-ftp": "6.2.1",
+    "marked": "18.0.13"
   }
 }

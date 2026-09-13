@@ -1,0 +1,22 @@
+<article class="post item">
+  <a class="post-image" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ post.cover }}" alt="" loading="lazy" width="600" height="416" />
+  </a>
+  <div class="post-content">
+    <ul class="post-meta">
+      <li>
+        <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i>
+        <span><time datetime="{{ post.date }}">{{ post.dateFormatted }}</time></span>
+      </li>
+      <li>
+        <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg></i>
+        <span><a href="{{ post.categoryUrl }}">{{ post.category }}</a></span>
+      </li>
+    </ul>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.description }}</p>
+    <a href="{{ post.url }}" class="more">Leer artículo
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</article>

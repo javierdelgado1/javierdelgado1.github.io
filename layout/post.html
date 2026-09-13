@@ -1,0 +1,117 @@
+<section class="bg-white">
+  <div class="section-content">
+    <nav aria-label="Migas de pan">
+      <ol class="breadcrumb">
+        <li><a href="{{ site.homeUrl }}">Blog</a></li>
+        <li><a href="{{ post.categoryUrl }}">{{ post.category }}</a></li>
+        <li class="active" aria-current="page">{{ post.title }}</li>
+      </ol>
+    </nav>
+
+    <article class="post single" itemscope itemtype="https://schema.org/BlogPosting">
+      <figure class="post-image">
+        <img src="{{ post.cover }}" alt="{{ post.coverAlt }}" width="1000" height="693" fetchpriority="high" itemprop="image" />
+      </figure>
+
+      <div class="post-content">
+        <ul class="post-meta">
+          <li>
+            <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i>
+            <span><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.dateFormatted }}</time></span>
+          </li>
+          <li>
+            <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg></i>
+            <span><a href="{{ post.categoryUrl }}">{{ post.category }}</a></span>
+          </li>
+          <li>
+            <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></i>
+            <span>{{ post.readingTime }} min de lectura</span>
+          </li>
+          {{#if post.updatedFormatted}}
+          <li>
+            <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></i>
+            <span>Actualizado <time datetime="{{ post.updated }}" itemprop="dateModified">{{ post.updatedFormatted }}</time></span>
+          </li>
+          {{/if}}
+        </ul>
+
+        <h1 itemprop="headline">{{ post.title }}</h1>
+        <p class="lead" itemprop="description">{{ post.description }}</p>
+
+        <div class="post-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <img src="{{ site.avatarSmallUrl }}" alt="" width="36" height="36" loading="lazy" />
+          <span>Por <a href="{{ site.mainSiteUrl }}" itemprop="url"><span itemprop="name">{{ post.author }}</span></a> · {{ site.authorTitle }}</span>
+        </div>
+
+        {{#if post.keyPoints}}
+        <aside class="key-points" aria-labelledby="key-points-heading">
+          <h2 id="key-points-heading">En resumen</h2>
+          <ul>
+            {{#each post.keyPoints}}
+            <li>{{ this }}</li>
+            {{/each}}
+          </ul>
+        </aside>
+        {{/if}}
+
+        {{#if post.toc}}
+        <nav class="toc" aria-labelledby="toc-heading">
+          <h2 id="toc-heading">Contenido</h2>
+          <ol>
+            {{#each post.toc}}
+            <li class="toc__l{{ depth }}"><a href="#{{ id }}">{{ text }}</a></li>
+            {{/each}}
+          </ol>
+        </nav>
+        {{/if}}
+
+        <div class="post-body" itemprop="articleBody">
+          {{{ post.html }}}
+        </div>
+
+        {{#if post.tags}}
+        <div class="post-tags">
+          {{#each post.tags}}<span class="tag">#{{ this }}</span>{{/each}}
+        </div>
+        {{/if}}
+
+        <div class="post-share">
+          <span>Compartir</span>
+          <a href="https://twitter.com/intent/tweet?url={{ shareUrl }}&text={{ shareText }}" target="_blank" rel="noopener">X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ shareUrl }}" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/?text={{ shareText }}%20{{ shareUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+          <button type="button" class="copy-link" data-url="{{ post.urlAbs }}">Copiar enlace</button>
+          <a href="{{ post.markdownUrl }}" class="md-link" title="Ver esta entrada en Markdown (ideal para asistentes de IA)">Markdown</a>
+        </div>
+
+        <nav class="post-nav" aria-label="Entradas anterior y siguiente">
+          {{#if older}}
+          <a class="post-nav__item post-nav__prev" href="{{ older.url }}">
+            <small>← Anterior</small>
+            <span>{{ older.title }}</span>
+          </a>
+          {{else}}<span></span>{{/if}}
+          {{#if newer}}
+          <a class="post-nav__item post-nav__next" href="{{ newer.url }}">
+            <small>Siguiente →</small>
+            <span>{{ newer.title }}</span>
+          </a>
+          {{/if}}
+        </nav>
+      </div>
+    </article>
+  </div>
+</section>
+
+{{#if hasRelated}}
+<section class="bg-white related" aria-labelledby="related-heading">
+  <div class="section-content">
+    <h3 class="text-muted" id="related-heading">Sigue leyendo</h3>
+    <div class="post-grid">
+      {{{ related }}}
+    </div>
+  </div>
+</section>
+{{/if}}
+
+{{{ cta }}}

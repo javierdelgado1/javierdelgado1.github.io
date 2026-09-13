@@ -1,0 +1,39 @@
+<header id="header" class="bg-primary">
+  <!-- Top Bar (igual que el portafolio) -->
+  <div id="top-bar">
+    <div class="container">
+      <nav class="menu module left" aria-label="Sitio principal">
+        <a href="{{ site.mainSiteUrl }}">{{ site.mainSiteLabel }}</a>
+      </nav>
+      <nav class="menu module right" aria-label="Sígueme">
+        <span>Sígueme</span>
+        {{#each site.social}}<a href="{{ url }}" target="_blank" rel="noopener me">{{ name }}</a>{{/each}}
+        <a href="{{ site.rssUrl }}">RSS</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div id="nav-bar" class="container">
+    <nav aria-label="Navegación principal">
+      <ul id="nav-primary" class="nav nav-primary">
+        <li class="icon-link">
+          <a href="{{ site.mainSiteUrl }}" title="Ir al portafolio" aria-label="Ir al portafolio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+          </a>
+        </li>
+        {{#each nav}}
+        <li><a href="{{ href }}"{{#if active}} class="active" aria-current="page"{{/if}}>{{ label }}</a></li>
+        {{/each}}
+      </ul>
+    </nav>
+
+    <div class="mobile-nav clearfix">
+      <div class="owner">
+        <img src="{{ site.avatarSmallUrl }}" alt="" width="46" height="46" />
+        <span class="name">{{ site.author }}</span>
+      </div>
+      <button type="button" class="panel-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel"><span><span></span></span></button>
+    </div>
+  </div>
+</header>

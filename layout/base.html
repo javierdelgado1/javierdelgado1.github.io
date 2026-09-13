@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ htmlTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}" />
+    <link rel="canonical" href="{{ canonical }}" />
+    <meta name="robots" content="{{ robots }}" />
+    <meta name="author" content="{{ author }}" />
+    <meta name="theme-color" content="#3ba3e2" />
+    <link rel="icon" href="{{ site.faviconUrl }}" type="image/png" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.siteName }}" href="{{ site.rssUrl }}" />
+    {{#if markdownUrl}}<link rel="alternate" type="text/markdown" title="Versión Markdown" href="{{ markdownUrl }}" />{{/if}}
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:site_name" content="{{ site.siteName }}" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="{{ ogType }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
+    <meta property="og:url" content="{{ canonical }}" />
+    <meta property="og:image" content="{{ ogImage }}" />
+    <meta property="og:image:alt" content="{{ pageTitle }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ pageDescription }}" />
+    <meta name="twitter:image" content="{{ ogImage }}" />
+    {{{ articleMeta }}}
+
+    <!-- Datos estructurados (schema.org) -->
+    {{#if jsonLd}}<script type="application/ld+json">{{{ jsonLd }}}</script>{{/if}}
+
+    <!-- Tipografía (misma que el portafolio: Montserrat + Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ site.cssUrl }}" />
+    <script>document.documentElement.classList.add("js");</script>
+  </head>
+
+  <body class="bg-grey {{ bodyClass }}">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- Loader (igual que el portafolio; se oculta al cargar) -->
+    <div id="page-loader" class="bg-white" aria-hidden="true">
+      <svg class="loader" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="circle" fill="none" stroke-width="3" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>
+
+    <!-- Fondo fijo con zoom lento (igual que el portafolio) -->
+    <div class="bg-body bg-image zooming" style="background-image: url('{{ site.backgroundUrl }}')" aria-hidden="true"></div>
+
+    {{{ header }}}
+    {{{ panel }}}
+    <div class="panel-backdrop" aria-hidden="true"></div>
+
+    <div id="content" class="container">
+      {{{ sidebar }}}
+      <main id="contenido" class="sections-wrapper">
+        {{{ content }}}
+        {{{ footer }}}
+      </main>
+    </div>
+
+    {{{ share }}}
+
+    <script src="{{ site.jsUrl }}" defer></script>
+  </body>
+</html>

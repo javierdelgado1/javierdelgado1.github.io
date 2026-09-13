@@ -1,0 +1,72 @@
+<section id="blog" class="bg-white">
+  <div class="section-content">
+    {{#if activeCategory}}
+    <nav aria-label="Migas de pan">
+      <ol class="breadcrumb">
+        <li><a href="{{ site.homeUrl }}">Blog</a></li>
+        <li class="active" aria-current="page">{{ title }}</li>
+      </ol>
+    </nav>
+    {{/if}}
+
+    <h3 class="text-muted">{{ heading }}</h3>
+
+    {{#if hasPosts}}
+
+      {{#if featured}}
+      <article class="post item post-featured">
+        <a class="post-image" href="{{ featured.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ featured.cover }}" alt="" width="1000" height="693" fetchpriority="high" />
+        </a>
+        <div class="post-content">
+          <ul class="post-meta">
+            <li><span class="label label-primary">Destacado</span></li>
+            <li>
+              <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i>
+              <span><time datetime="{{ featured.date }}">{{ featured.dateFormatted }}</time></span>
+            </li>
+            <li>
+              <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg></i>
+              <span><a href="{{ featured.categoryUrl }}">{{ featured.category }}</a></span>
+            </li>
+          </ul>
+          <h2><a href="{{ featured.url }}">{{ featured.title }}</a></h2>
+          <p>{{ featured.description }}</p>
+          <a class="btn btn-primary" href="{{ featured.url }}">Leer artículo
+            <span class="i i-after" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </article>
+      {{/if}}
+
+      {{#if cards}}
+      <div class="post-grid">
+        {{{ cards }}}
+      </div>
+      {{/if}}
+
+      {{#if pagination.show}}
+      <nav aria-label="Paginación">
+        <ul class="pagination">
+          {{#if pagination.prev}}<li><a href="{{ pagination.prev }}" aria-label="Página anterior">‹</a></li>{{/if}}
+          {{#each pagination.pages}}
+          <li{{#if active}} class="active"{{/if}}>{{#if active}}<span aria-current="page">{{ n }}</span>{{else}}<a href="{{ url }}">{{ n }}</a>{{/if}}</li>
+          {{/each}}
+          {{#if pagination.next}}<li><a href="{{ pagination.next }}" aria-label="Página siguiente">›</a></li>{{/if}}
+        </ul>
+      </nav>
+      {{/if}}
+
+    {{else}}
+      <div class="empty-state">
+        <h2>Aún no hay entradas</h2>
+        <p>Agrega un archivo Markdown en <code>posts/</code> y ejecuta <code>npm run build</code>.</p>
+      </div>
+    {{/if}}
+  </div>
+</section>
+
+{{{ cta }}}

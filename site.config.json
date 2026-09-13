@@ -1,0 +1,45 @@
+{
+  "siteName": "Blog de Javier Delgado",
+  "author": "Javier Delgado",
+  "authorTitle": "Ing. en Computación · Desarrollador web full stack",
+  "aboutShort": "Escribo sobre desarrollo web, Vue, AWS, automatización e inteligencia artificial aplicada a proyectos reales.",
+  "tagline": "Notas sobre desarrollo web, Vue, AWS, IA y lo que voy aprendiendo en el camino",
+  "description": "Blog de Javier Delgado, ingeniero en computación y desarrollador web full stack: artículos en español sobre desarrollo web, Vue, AWS, automatización e inteligencia artificial.",
+  "lang": "es",
+  "baseUrl": "https://blog.javierdelgado.com.ve",
+  "basePath": "",
+  "mainSiteUrl": "https://javierdelgado.com.ve",
+  "mainSiteLabel": "javierdelgado.com.ve",
+  "email": "hola@javierdelgado.com.ve",
+  "cvUrl": "https://onwcloud.javierdelgado.com.ve/index.php/s/0FzsoAu6KCzrlMy",
+  "sameAs": [
+    "https://twitter.com/cheche338",
+    "https://github.com/javierdelgado1"
+  ],
+  "social": [
+    { "name": "X", "url": "https://twitter.com/cheche338" },
+    { "name": "GitHub", "url": "https://github.com/javierdelgado1" }
+  ],
+  "avatar": "/assets/img/avatar.jpg",
+  "avatarSquare": "/assets/img/avatar_square.jpg",
+  "avatarSmall": "/assets/img/avatar_square_sm.jpg",
+  "background": "/assets/img/bg.jpg",
+  "favicon": "/assets/img/favicon.png",
+  "defaultCover": "/assets/img/cover-default.jpg",
+  "postsPerPage": 8,
+  "navCategories": 4,
+  "forceHttps": true,
+  "footerLinks": [
+    { "label": "Portafolio", "href": "https://javierdelgado.com.ve" },
+    { "label": "GitHub", "href": "https://github.com/javierdelgado1" }
+  ],
+  "cta": {
+    "kicker": "¿Tienes un proyecto en mente?",
+    "title": "Hablemos",
+    "text": "Desarrollo aplicaciones web, integraciones y automatizaciones con IA. Si necesitas ayuda con tu proyecto, escríbeme o revisa mi experiencia.",
+    "primaryLabel": "Escríbeme",
+    "primaryHref": "mailto:hola@javierdelgado.com.ve",
+    "secondaryLabel": "Descarga mi CV",
+    "secondaryHref": "https://onwcloud.javierdelgado.com.ve/index.php/s/0FzsoAu6KCzrlMy"
+  }
+}

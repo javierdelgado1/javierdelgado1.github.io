@@ -1,0 +1,9 @@
+<footer class="blog-footer bg-white">
+  <p>© {{ year }} <a href="{{ site.mainSiteUrl }}">{{ site.author }}</a>. {{ site.tagline }}.</p>
+  <nav aria-label="Enlaces del pie de página">
+    {{#each site.footerLinks}}<a href="{{ href }}">{{ label }}</a>{{/each}}
+    <a href="{{ site.rssUrl }}">RSS</a>
+    <a href="{{ site.llmsUrl }}">llms.txt</a>
+    <a href="{{ site.sitemapUrl }}">Sitemap</a>
+  </nav>
+</footer>

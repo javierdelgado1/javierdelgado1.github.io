@@ -1,0 +1,41 @@
+<!-- Panel lateral (menú móvil, igual que el portafolio) -->
+<nav id="panel" class="bg-white" aria-label="Menú">
+  <div class="panel-wrapper">
+    <div class="photo">
+      <img src="{{ site.avatarSquareUrl }}" alt="{{ site.author }}" width="310" height="310" loading="lazy" />
+    </div>
+
+    <div class="menu widget">
+      <h6>Navegación</h6>
+      <ul id="nav-mobile" class="nav nav-panel">
+        <li>
+          <a href="{{ site.mainSiteUrl }}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+            Portafolio
+          </a>
+        </li>
+        {{#each nav}}
+        <li>
+          <a href="{{ href }}"{{#if active}} class="active" aria-current="page"{{/if}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg>
+            {{ label }}
+          </a>
+        </li>
+        {{/each}}
+        <li>
+          <a href="{{ site.rssUrl }}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+            RSS
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h6>Sígueme</h6>
+      <ul class="nav nav-panel">
+        {{#each site.social}}<li><a href="{{ url }}" target="_blank" rel="noopener me">{{ name }}</a></li>{{/each}}
+      </ul>
+    </div>
+  </div>
+</nav>

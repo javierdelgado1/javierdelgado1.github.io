@@ -7,6 +7,7 @@ tags: [cpanel, ftp, markdown, node, seo, hosting]
 cover: /assets/img/cover-cpanel.jpg
 coverAlt: Cuaderno y taza de café sobre un escritorio
 author: Javier Delgado
+translationKey: static-blog-cpanel-ftp
 keyPoints:
   - No hace falta un servicio "moderno" para publicar un blog estático; un hosting cPanel con FTP sirve perfectamente.
   - Las entradas se escriben en Markdown con un encabezado de metadatos y un script de Node genera el HTML completo.
@@ -29,7 +30,7 @@ Y cPanel, con todos sus años, tiene lo único que hace falta: un servidor Apach
 
 ## Escribir: Markdown con front matter
 
-Cada entrada es un archivo en `posts/` con un encabezado de metadatos (front matter) y el contenido en Markdown:
+Cada entrada es un archivo en `posts/<idioma>/` con un encabezado de metadatos (front matter) y el contenido en Markdown:
 
 ```markdown
 ---
@@ -47,7 +48,7 @@ keyPoints:
 Contenido en **Markdown**…
 ```
 
-La URL sale del nombre del archivo: `posts/2026-09-10-mi-titulo.md` se publica en `/posts/mi-titulo/`. Si el archivo tiene `draft: true`, no se publica. Un comando (`npm run new -- "Título"`) crea el archivo con la plantilla lista.
+La URL sale del nombre del archivo: `posts/es/2026-09-10-mi-titulo.md` se publica en `/es/posts/mi-titulo/`. Si el archivo tiene `draft: true`, no se publica. Un comando (`npm run new -- "Título" --lang es`) crea el archivo con la plantilla lista.
 
 ## Generar: un script de Node sin frameworks
 
@@ -58,7 +59,7 @@ dist/
 ├── index.html                  portada (paginada en /page/2/, /page/3/…)
 ├── posts/<slug>/index.html     cada entrada
 ├── posts/<slug>.md             la misma entrada en Markdown limpio
-├── categoria/<nombre>/         listados por categoría
+├── categoria/<nombre>/         listados por categoría (category/<name>/ en inglés)
 ├── assets/                     css, js, imágenes
 ├── sitemap.xml · rss.xml · robots.txt · llms.txt · 404.html
 └── .htaccess                   configuración de Apache
@@ -129,7 +130,7 @@ Y para los asistentes de IA (ChatGPT, Claude, Perplexity), que cada vez envían 
 
 ### ¿Funciona en un subdominio o solo en la raíz?
 
-En ambos. El generador tiene un `basePath` configurable: vacío si el blog vive en `blog.midominio.com`, o `/blog` si vive en `midominio.com/blog/`. Todas las rutas internas, el `.htaccess` y el sitemap se ajustan solos.
+En ambos. El generador tiene un `basePath` configurable por idioma: vacío para el idioma por defecto (por ejemplo, inglés en la raíz de `blog.midominio.com`), o `/es` para el resto. Todas las rutas internas, el `.htaccess`, el `hreflang` y el sitemap se ajustan solos.
 
 ### ¿Qué pasa si el hosting no soporta FTPS?
 

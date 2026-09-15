@@ -1,9 +1,9 @@
 <section id="blog" class="bg-white">
   <div class="section-content">
     {{#if activeCategory}}
-    <nav aria-label="Migas de pan">
+    <nav aria-label="Breadcrumb">
       <ol class="breadcrumb">
-        <li><a href="{{ site.homeUrl }}">Blog</a></li>
+        <li><a href="{{ site.homeUrl }}">{{ ui.blog }}</a></li>
         <li class="active" aria-current="page">{{ title }}</li>
       </ol>
     </nav>
@@ -20,7 +20,7 @@
         </a>
         <div class="post-content">
           <ul class="post-meta">
-            <li><span class="label label-primary">Destacado</span></li>
+            <li><span class="label label-primary">{{ ui.featured }}</span></li>
             <li>
               <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i>
               <span><time datetime="{{ featured.date }}">{{ featured.dateFormatted }}</time></span>
@@ -32,7 +32,7 @@
           </ul>
           <h2><a href="{{ featured.url }}">{{ featured.title }}</a></h2>
           <p>{{ featured.description }}</p>
-          <a class="btn btn-primary" href="{{ featured.url }}">Leer artículo
+          <a class="btn btn-primary" href="{{ featured.url }}">{{ ui.readArticle }}
             <span class="i i-after" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -49,21 +49,21 @@
       {{/if}}
 
       {{#if pagination.show}}
-      <nav aria-label="Paginación">
+      <nav aria-label="Pagination">
         <ul class="pagination">
-          {{#if pagination.prev}}<li><a href="{{ pagination.prev }}" aria-label="Página anterior">‹</a></li>{{/if}}
+          {{#if pagination.prev}}<li><a href="{{ pagination.prev }}" aria-label="{{ ui.previous }}">‹</a></li>{{/if}}
           {{#each pagination.pages}}
           <li{{#if active}} class="active"{{/if}}>{{#if active}}<span aria-current="page">{{ n }}</span>{{else}}<a href="{{ url }}">{{ n }}</a>{{/if}}</li>
           {{/each}}
-          {{#if pagination.next}}<li><a href="{{ pagination.next }}" aria-label="Página siguiente">›</a></li>{{/if}}
+          {{#if pagination.next}}<li><a href="{{ pagination.next }}" aria-label="{{ ui.next }}">›</a></li>{{/if}}
         </ul>
       </nav>
       {{/if}}
 
     {{else}}
       <div class="empty-state">
-        <h2>Aún no hay entradas</h2>
-        <p>Agrega un archivo Markdown en <code>posts/</code> y ejecuta <code>npm run build</code>.</p>
+        <h2>{{ ui.emptyTitle }}</h2>
+        <p>{{{ emptyText }}}</p>
       </div>
     {{/if}}
   </div>

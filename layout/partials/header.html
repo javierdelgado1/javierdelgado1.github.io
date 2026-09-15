@@ -2,11 +2,12 @@
   <!-- Top Bar (igual que el portafolio) -->
   <div id="top-bar">
     <div class="container">
-      <nav class="menu module left" aria-label="Sitio principal">
+      <nav class="menu module left" aria-label="{{ ui.portfolio }}">
         <a href="{{ site.mainSiteUrl }}">{{ site.mainSiteLabel }}</a>
       </nav>
-      <nav class="menu module right" aria-label="Sígueme">
-        <span>Sígueme</span>
+      <nav class="menu module right lang-switch" aria-label="{{ ui.languageSwitchLabel }}">
+        {{#each langLinks}}<a href="{{ href }}" hreflang="{{ code }}"{{#if active}} class="active" aria-current="true"{{/if}}>{{ code }}</a>{{/each}}
+        <span class="sep" aria-hidden="true">|</span>
         {{#each site.social}}<a href="{{ url }}" target="_blank" rel="noopener me">{{ name }}</a>{{/each}}
         <a href="{{ site.rssUrl }}">RSS</a>
       </nav>
@@ -15,10 +16,10 @@
 
   <!-- Navigation Bar -->
   <div id="nav-bar" class="container">
-    <nav aria-label="Navegación principal">
+    <nav aria-label="{{ ui.navigation }}">
       <ul id="nav-primary" class="nav nav-primary">
         <li class="icon-link">
-          <a href="{{ site.mainSiteUrl }}" title="Ir al portafolio" aria-label="Ir al portafolio">
+          <a href="{{ site.mainSiteUrl }}" title="{{ ui.goToPortfolio }}" aria-label="{{ ui.goToPortfolio }}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
           </a>
         </li>
@@ -33,7 +34,7 @@
         <img src="{{ site.avatarSmallUrl }}" alt="" width="46" height="46" />
         <span class="name">{{ site.author }}</span>
       </div>
-      <button type="button" class="panel-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel"><span><span></span></span></button>
+      <button type="button" class="panel-toggle" aria-label="{{ ui.navigation }}" aria-expanded="false" aria-controls="panel"><span><span></span></span></button>
     </div>
   </div>
 </header>

@@ -7,6 +7,7 @@ tags: [seguridad, git, frontend, mantenimiento]
 cover: /assets/img/cover-seguridad.jpg
 coverAlt: Candado sobre un teclado de computadora
 author: Javier Delgado
+translationKey: legacy-frontend-security
 keyPoints:
   - Una clave de API en el código de un repositorio público sigue expuesta aunque la borres; hay que rotarla.
   - El código "que ya no se usa" (formularios PHP, integraciones viejas) sigue siendo alcanzable y explotable en el servidor.

@@ -7,6 +7,7 @@ tags: [vue, vite, javascript, migración, refactor]
 cover: /assets/img/cover-vue3.jpg
 coverAlt: Escritorio de trabajo con un portátil mostrando código
 author: Javier Delgado
+translationKey: vue2-to-vue3-migration
 featured: true
 keyPoints:
   - Antes de migrar el stack, cerré los problemas de seguridad (API key expuesta, formulario PHP vulnerable, código muerto).

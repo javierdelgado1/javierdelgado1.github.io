@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ site.htmlLang }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ htmlTitle }}</title>
     <meta name="description" content="{{ pageDescription }}" />
     <link rel="canonical" href="{{ canonical }}" />
+    {{#each alternates}}<link rel="alternate" hreflang="{{ hreflang }}" href="{{ href }}" />{{/each}}
     <meta name="robots" content="{{ robots }}" />
     <meta name="author" content="{{ author }}" />
     <meta name="theme-color" content="#3ba3e2" />
     <link rel="icon" href="{{ site.faviconUrl }}" type="image/png" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.siteName }}" href="{{ site.rssUrl }}" />
-    {{#if markdownUrl}}<link rel="alternate" type="text/markdown" title="Versión Markdown" href="{{ markdownUrl }}" />{{/if}}
+    {{#if markdownUrl}}<link rel="alternate" type="text/markdown" title="Markdown version" href="{{ markdownUrl }}" />{{/if}}
 
     <!-- Open Graph / Twitter -->
     <meta property="og:site_name" content="{{ site.siteName }}" />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content="{{ site.locale }}" />
+    {{#each altLocales}}<meta property="og:locale:alternate" content="{{ this }}" />{{/each}}
     <meta property="og:type" content="{{ ogType }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ pageDescription }}" />
@@ -23,6 +25,7 @@
     <meta property="og:image" content="{{ ogImage }}" />
     <meta property="og:image:alt" content="{{ pageTitle }}" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@cheche338" />
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ pageDescription }}" />
     <meta name="twitter:image" content="{{ ogImage }}" />
@@ -43,7 +46,7 @@
   </head>
 
   <body class="bg-grey {{ bodyClass }}">
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <a class="skip-link" href="#main-content">{{ ui.skipToContent }}</a>
 
     <!-- Loader (igual que el portafolio; se oculta al cargar) -->
     <div id="page-loader" class="bg-white" aria-hidden="true">
@@ -61,7 +64,7 @@
 
     <div id="content" class="container">
       {{{ sidebar }}}
-      <main id="contenido" class="sections-wrapper">
+      <main id="main-content" class="sections-wrapper">
         {{{ content }}}
         {{{ footer }}}
       </main>

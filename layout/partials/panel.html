@@ -1,17 +1,17 @@
 <!-- Panel lateral (menú móvil, igual que el portafolio) -->
-<nav id="panel" class="bg-white" aria-label="Menú">
+<nav id="panel" class="bg-white" aria-label="{{ ui.navigation }}">
   <div class="panel-wrapper">
     <div class="photo">
       <img src="{{ site.avatarSquareUrl }}" alt="{{ site.author }}" width="310" height="310" loading="lazy" />
     </div>
 
     <div class="menu widget">
-      <h6>Navegación</h6>
+      <h6>{{ ui.navigation }}</h6>
       <ul id="nav-mobile" class="nav nav-panel">
         <li>
           <a href="{{ site.mainSiteUrl }}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
-            Portafolio
+            {{ ui.portfolio }}
           </a>
         </li>
         {{#each nav}}
@@ -32,7 +32,21 @@
     </div>
 
     <div class="widget">
-      <h6>Sígueme</h6>
+      <h6>{{ ui.languageSwitchLabel }}</h6>
+      <ul class="nav nav-panel">
+        {{#each langLinks}}
+        <li>
+          <a href="{{ href }}" hreflang="{{ code }}"{{#if active}} class="active" aria-current="true"{{/if}}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            {{ label }}
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h6>{{ ui.followMe }}</h6>
       <ul class="nav nav-panel">
         {{#each site.social}}<li><a href="{{ url }}" target="_blank" rel="noopener me">{{ name }}</a></li>{{/each}}
       </ul>

@@ -287,6 +287,39 @@ body.sticky-layout #header {
   opacity: 1;
 }
 
+/* Selector de idioma en el top-bar: códigos en mayúsculas (EN | ES) */
+.lang-switch a {
+  text-transform: uppercase;
+}
+.lang-switch a.active {
+  opacity: 1;
+  font-weight: 700;
+  pointer-events: none;
+}
+.lang-switch .sep {
+  margin: 0 6px;
+  opacity: 0.35;
+}
+
+/* Selector de idioma en el panel / sidebar (fuera del top-bar) */
+.nav-panel li a[hreflang],
+.list-lined a[hreflang] {
+  text-transform: none;
+}
+.nav-panel li a[hreflang].active,
+.list-lined a[hreflang].active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Aviso de traducción automática, debajo de la autoría del post */
+.translation-note {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+  margin: -18px 0 24px;
+}
+
 .nav-primary {
   display: flex;
   flex-direction: row;

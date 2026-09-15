@@ -1,16 +1,16 @@
 <!-- Columna izquierda: foto (como #photo en el portafolio) + widgets -->
 <aside id="photo" class="blog-sidebar">
   <div class="sidebar-sticky">
-    <a class="photo-link" href="{{ site.mainSiteUrl }}" title="Ir al portafolio">
+    <a class="photo-link" href="{{ site.mainSiteUrl }}" title="{{ ui.goToPortfolio }}">
       <img class="avatar" src="{{ site.avatarUrl }}" alt="{{ site.author }}" width="370" height="526" />
     </a>
 
     <div class="sidebar bg-white">
       <div class="widget widget-about">
-        <h6>Sobre mí</h6>
+        <h6>{{ ui.aboutMe }}</h6>
         <p><strong>{{ site.author }}</strong><br />{{ site.authorTitle }}</p>
         <p>{{ site.aboutShort }}</p>
-        <a class="btn btn-primary btn-sm" href="{{ site.mainSiteUrl }}">Ver portafolio
+        <a class="btn btn-primary btn-sm" href="{{ site.mainSiteUrl }}">{{ ui.goToPortfolio }}
           <span class="i i-after" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -20,7 +20,7 @@
 
       {{#if categories}}
       <div class="widget">
-        <h6>Categorías</h6>
+        <h6>{{ ui.categories }}</h6>
         <ul class="list-lined">
           {{#each categories}}
           <li><a href="{{ url }}"{{#if active}} class="active"{{/if}}>{{ name }} <span class="count">{{ count }}</span></a></li>
@@ -30,10 +30,19 @@
       {{/if}}
 
       <div class="widget">
-        <h6>Suscríbete</h6>
+        <h6>{{ ui.subscribe }}</h6>
         <ul class="list-lined">
-          <li><a href="{{ site.rssUrl }}">Feed RSS</a></li>
-          <li><a href="{{ site.llmsUrl }}">llms.txt <span class="count">para IA</span></a></li>
+          <li><a href="{{ site.rssUrl }}">{{ ui.rssFeed }}</a></li>
+          <li><a href="{{ site.llmsUrl }}">llms.txt <span class="count">{{ ui.forAi }}</span></a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h6>{{ ui.languageSwitchLabel }}</h6>
+        <ul class="list-lined">
+          {{#each langLinks}}
+          <li><a href="{{ href }}" hreflang="{{ code }}"{{#if active}} class="active"{{/if}}>{{ label }}</a></li>
+          {{/each}}
         </ul>
       </div>
     </div>

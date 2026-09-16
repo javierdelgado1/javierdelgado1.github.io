@@ -46,6 +46,9 @@
           <li v-if="menu.certificates">
             <a href="#" v-scroll-to="'#certificates'" v-html="$t('menu.certificates')"></a>
           </li>
+          <li>
+            <a href="https://blog.javierdelgado.com.ve/" target="_blank" rel="noopener" v-html="$t('menu.blog')"></a>
+          </li>
         </ul>
       </nav>
 

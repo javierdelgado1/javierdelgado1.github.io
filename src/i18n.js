@@ -17,7 +17,8 @@ const messages = {
       english: 'English',
       spanish: 'Spanish',
       service: 'My services',
-      certificates: 'Certificates'
+      certificates: 'Certificates',
+      blog: 'Blog'
     },
     home: {
       bornYear: 'Born year: ',
@@ -70,7 +71,8 @@ const messages = {
       english: 'Ingles',
       spanish: 'Español',
       service: 'Mis servicios',
-      certificates: 'Certificados'
+      certificates: 'Certificados',
+      blog: 'Blog'
     },
     home: {
       bornYear: 'Fecha de nacimiento: ',

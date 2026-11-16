@@ -4,12 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ing. Javier Delgado</title>
+    <link rel="canonical" href="https://javierdelgado.com.ve/" />
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet">
   </head>
   <body class="bg-grey">
     <div id="app"></div>
+    <script>
+      // Restaurar ruta SPA después de redirección 404
+      (function() {
+        var redirect = sessionStorage.getItem('spa_redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa_redirect');
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
